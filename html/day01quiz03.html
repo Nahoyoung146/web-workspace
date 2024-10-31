@@ -8,59 +8,67 @@
 </head>
 
 <body>
-    <form action="day01quiz02.html" method="get">
+    <form action="day01quiz02.html">
         <table align="center">
             <tr>
-                <td>
-                    다음 <span style="background-color: brown;"><strong>내용에 맞게 입력</strong></span> 하시오
-                    <label>전공분야를 입력하세요.</label>
-                    <select name="test" size="1">
-                        <option>소프트웨어</option>
-                        <option>클라우드</option>
-                        <option>임베디드</option>
-                    </select><br>
-                    이름 &nbsp; &nbsp; &nbsp;
-                    <input type="text"><br>
-                    아이디 &nbsp;&nbsp;
-                    <input type="text"><br>
-                    비밀번호 &nbsp;
-                    <input type="text"><br>
+                <td colspan="2">
+                    다음 <span style="background-color: peru;"><strong>내용에 맞게 입력</strong></span> 하시오.
                 </td>
-                <td align="center">
-                    <img src="../resources/images/16.gif" width="200px" height="100px">
+                <td rowspan="5">
+                    <img src="../resources/images/16.gif" width="200px" height="150px">
                 </td>
             </tr>
             <tr>
                 <td colspan="2">
-                    <fieldset style="width: 95%;">
+                    <label>전공분야를 입력하세요.</label>
+                    <select size="1">
+                        <option>소프트웨어</option>
+                        <option>임베디드</option>
+                        <option>클라우드</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>이름</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>아이디</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>비밀번호</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <fieldset width="100%">
                         <legend>성별 조사</legend>
-                        여성 <input type="radio" name="sex"> 남성 <input type="radio" name="sex">
+                        여성<input type="radio" name="gender" checked>남성<input type="radio" name="gender">
                     </fieldset>
                 </td>
             </tr>
             <tr>
-                <td colspan="2">
-                    <fieldset style="width: 95%;">
+                <td colspan="3">
+                    <fieldset width="100%">
                         <legend>취미 조사</legend>
-                        책 읽기 <input type="checkbox">
-                        공부하기 <input type="checkbox">
-                        책 읽으며 공부하기<input type="checkbox">
+                        책읽기<input type="checkbox">공부하기<input type="checkbox">책 읽으며 공부하기<input type="checkbox">
                         컴퓨터<input type="checkbox">
                     </fieldset>
                 </td>
             </tr>
             <tr>
-                <td colspan="2">
-                    <fieldset style="width: 95%;">
-                        <legend>하고싶은말</legend>
-                        <textarea cols="100%" rows="10"></textarea>
+                <td colspan="3">
+                    <fieldset width="100%">
+                        <legend>하고 싶은 말</legend>
+                        <textarea cols="60" rows="3"></textarea>
                     </fieldset>
                 </td>
             </tr>
             <tr>
-                <td colspan="2">
+                <td colspan="3">
                     <input type="submit" value="완료">
-                    <input type="reset" value="다시작성"><br>
+                    <input type="reset" value="다시작성">
                 </td>
             </tr>
         </table>
