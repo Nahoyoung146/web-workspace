@@ -1,0 +1,85 @@
+#main{
+    border: 1px solid black;
+    width: 200px;
+    height: 800px;
+    margin: 10px auto;
+}
+
+#main>h1{
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+    overflow: hidden;
+    margin: 10px auto;
+}
+
+#main>h1>img:hover{
+    transform: scale(1.1);
+    transition: all 0.1s;
+}
+
+#main>hr{
+    width: 75%;
+}
+
+#main>div{
+    border: 1px solid black;
+    width: 150px;
+    height: 570px;
+    border-radius: 10px;
+    margin: 10px auto;
+}
+
+#main>div>:nth-child(1){
+    border: 1px solid black;
+    width: 150px;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#main>div>:nth-child(1)>img:hover{
+    transform: scale(1.1);
+    transition: all 0.1s;
+}
+
+#main>div>:nth-child(2){
+    width: 150px;
+    height: 330px;
+}
+
+
+#main>div>:nth-child(2)>a{
+    color: black;
+    text-decoration: none;
+}
+
+#main>div>:nth-child(2)>a:hover{
+    color: red;
+}
+
+#main>div>:nth-child(3){
+    width: 150px;
+    height: 25px;
+    color: blue;
+    text-align: right;
+}
+
+#main>button{
+    border: 1px solid black;
+    width: 40%;
+    height: 30px;
+    background-color: gray;
+    border-radius: 15px;
+    color: white;
+    margin-left: 26px;
+    margin-top: 0px;
+    position: relative;
+    top : -5px;
+}
+
+#main>button:hover{
+    border: none;
+    background-color: red;
+    color: white;
+}
