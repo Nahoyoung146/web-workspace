@@ -8,7 +8,6 @@
 </head>
 
 <body>
-    <!-- 웹 페이지에 표시할 내용을 적습니다. -->
     <p>나의 첫 번째 웹 페이지</p>
     <blockquote cite="https://ko.wikipedia.org/wiki/HTML">
         <p>
@@ -28,6 +27,190 @@
     </p>
     <p>세일 기간을 맞이하여 온라인 강의 수강권을 할인된 금액(정가<del>36,000</del><ins>20,000원</ins>에 판매합니다.)
     </p>
+
+    <form>
+        <fieldset>
+            <legend>기본 정보</legend>
+            <p>
+                <label for="userid">아이디</label>
+                <input type="text" id="userid">
+            </p>
+            <p>
+                <label for="passwd">비밀번호</label>
+                <input type="password" id="passwd">
+            </p>
+        </fieldset>
+        <fieldset>
+            <legend>선택 정보</legend>
+            <p>
+                <label for="age">나이</label>
+                <input type="number" id="age">
+            </p>
+            <p>
+                <label for="recommender">추천인</label>
+                <input type="text" id="recommender">
+            </p>
+        </fieldset>
+    </form>
+
+    <form action="#" method="post">
+        <fieldset>
+            <legend>블로그 글쓰기</legend>
+            <p>
+                <label for="title">제목
+                    <input type="text" id="title" name="title">
+                </label>
+            </p>
+            <p>
+                <label for="desc">내용
+                    <textarea id="desc" name="desc"></textarea>
+                </label>
+            </p>
+        </fieldset>
+    </form>
+    <fieldset>
+        <legend>개인 정보 입력</legend>
+        지역<br>
+        <select name="city" id="city">
+            <option value="강북구">강북구</option>
+            <option value="강남구">강남구</option>
+            <option value="서초구">서초구</option>
+            <option value="중원구">중원구</option>
+            <option value="분당구">분당구</option>
+        </select>
+    </fieldset>
+    <fieldset>
+        <legend>개인 정보 입력</legend>
+        지역<br>
+        <select name="city" id="city">
+            <optgroup label="서울시">
+                <option value="강북구">강북구</option>
+                <option value="강남구">강남구</option>
+                <option value="서초구">서초구</option>
+            </optgroup>
+            <optgroup label="경기도 성남시">
+                <option value="중원구">중원구</option>
+                <option value="분당구">분당구</option>
+            </optgroup>
+        </select>
+    </fieldset>
+    <fieldset>
+        <legend>개인 정보 입력</legend>
+        지역<br>
+        <select name="city" id="city" size="3">
+            <option value="강북구">강북구</option>
+            <option value="강남구">강남구</option>
+            <option value="서초구">서초구</option>
+            <option value="중원구">중원구</option>
+            <option value="분당구">분당구</option>
+        </select>
+    </fieldset>
+    <fieldset>
+        <legend>개인 정보 입력</legend>
+        지역<br>
+        <select name="city" id="city" multiple>
+            <option value="강북구">강북구</option>
+            <option value="강남구">강남구</option>
+            <option value="서초구">서초구</option>
+            <option value="중원구">중원구</option>
+            <option value="분당구">분당구</option>
+        </select>
+    </fieldset>
+    <fieldset>
+        <legend>개인 정보 입력</legend>
+        지역<br>
+        <select name="city" id="city">
+            <option value="강북구">강북구</option>
+            <option value="강남구">강남구</option>
+            <option value="서초구" selected>서초구</option>
+            <option value="중원구">중원구</option>
+            <option value="분당구">분당구</option>
+        </select>
+    </fieldset>
+    <button type="submit">
+        <img src="../resources/images/16.gif" alt="이미지">
+        페이스북에 등록하기
+    </button>
+    <p>
+        <input type="text" disabled>
+        <button type="button" disabled>비활성</button>
+    </p>
+    <p>
+        <input type="password" readonly value="읽기전용"><br>
+        <textarea readonly>읽기전용</textarea>
+    </p>
+    <p>
+        <input type="url" maxlength="4" value="4글자만"><br>
+        <textarea maxlength="4">4글자만</textarea>
+    </p>
+    <fieldset>
+        <legend>좋아하는 과일</legend>
+        <input type="checkbox" id="banana" name="banana" value="banana">
+        <label for="banana">banana</label><br>
+        <input type="checkbox" id="apple" name="apple" value="apple">
+        <label for="apple">apple</label><br>
+        <input type="checkbox" id="orange" name="orange" value="orange">
+        <label for="orange">orange</label>
+    </fieldset>
+    <p>
+        <input type="tel" placeholder="전화번호를 입력해 주세요.">
+    </p>
+    <table align="center" border="1">
+        <tr>
+            <th>번호</th>
+            <th>상품명</th>
+            <th>수량</th>
+            <th>가격</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>콜라</td>
+            <td>1개</td>
+            <td>1,500원</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>사이다</td>
+            <td>2개</td>
+            <td>1,000원</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>탄산수</td>
+            <td>3개</td>
+            <td>1,000원</td>
+        </tr>
+    </table>
+    <br>
+    <table align="center" border="1">
+        <tr>
+            <th>번호</th>
+            <th>상품명</th>
+            <th>수량</th>
+            <th>가격</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>콜라</td>
+            <td>1개</td>
+            <td>1,500원</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>사이다</td>
+            <td>2개</td>
+            <td rowspan="2">1,000원</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>탄산수</td>
+            <td>3개</td>
+        </tr>
+        <tr>
+            <td>총금액</td>
+            <td colspan="3">6,500원</td>
+        </tr>
+    </table>
 </body>
 
 </html>
