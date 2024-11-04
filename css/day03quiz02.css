@@ -1,0 +1,100 @@
+#main1,
+#main2,
+#main3 {
+    margin: 0px auto;
+    width: 300px;
+    height: 200px;
+    text-align: center;
+}
+
+#main1>:nth-child(1) {
+    background-color: red;
+    height: 10%;
+}
+
+#main1>:nth-child(2) {
+    height: 80%;
+    display: flex;
+
+    &>:nth-child(1) {
+        background-color: gold;
+        width: 20%;
+    }
+
+    &>:nth-child(2) {
+        background-color: green;
+        width: 80%;
+    }
+}
+
+#main1>:nth-child(3) {
+    background-color: hotpink;
+    height: 10%;
+}
+
+#main2>:nth-child(1) {
+    background-color: red;
+    height: 10%;
+}
+
+#main2>:nth-child(2) {
+    height: 80%;
+    display: flex;
+
+    &>:nth-child(1) {
+        background-color: gold;
+        width: 10%;
+    }
+
+    &>:nth-child(2) {
+        background-color: green;
+        width: 70%;
+    }
+
+    &>:nth-child(3) {
+        background-color: gold;
+        width: 20%;
+    }
+}
+
+#main2>:nth-child(3) {
+    background-color: hotpink;
+    height: 10%;
+}
+
+#main3>:nth-child(1) {
+    background-color: red;
+    height: 10%;
+}
+
+#main3>:nth-child(2) {
+    height: 80%;
+    display: flex;
+
+    &>:nth-child(1) {
+        background-color: gold;
+        width: 10%;
+    }
+
+    &>:nth-child(2) {
+        background-color: green;
+        width: 70%;
+
+        &>div {
+            width: 70%;
+            height: 15%;
+            background: white;
+            margin: 19px auto;
+        }
+    }
+
+    &>:nth-child(3) {
+        background-color: gold;
+        width: 20%;
+    }
+}
+
+#main3>:nth-child(3) {
+    height: 10%;
+    background-color: hotpink;
+}

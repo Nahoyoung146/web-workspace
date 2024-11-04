@@ -1,0 +1,60 @@
+#main {
+    border: 1px solid black;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+#main>div {
+    width: 216px;
+    height: 216px;
+    display: inline-block;
+    margin-right: 30px;
+}
+
+#main>div:nth-last-child(1) {
+    margin-right: 0
+}
+
+#main>:nth-child(1) {
+    background-image: url(../resources/images/16.gif);
+    background-size: 216px 216px;
+}
+
+#main>:nth-child(2) {
+    background-image: url(../resources/images/add.png);
+    background-size: 216px 216px;
+}
+
+#main>:nth-child(3) {
+    background-image: url(../resources/images/cici33_35_lommel2003.jpg);
+    background-size: 216px 216px;
+}
+
+#main>:nth-child(4) {
+    background-image: url(../resources/images/car01.png);
+    background-size: 216px 216px;
+}
+
+#main>:nth-child(5) {
+    background-image: url(../resources/images/car02.png);
+    background-size: 216px 216px;
+}
+
+#main>div div {
+    border: 5px solid gray;
+    border-radius: 10px;
+    font-size: 30px;
+    width: 100px;
+    height: 40%;
+    text-align: center;
+    color: red;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+#main>div:hover {
+    &>div {
+        background-color: green;
+        color: white;
+    }
+}
