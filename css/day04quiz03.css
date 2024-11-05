@@ -1,0 +1,36 @@
+#main {
+    margin: 0px auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    overflow: hidden;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    transition: 1s;
+}
+
+#main+div {
+    margin: 0px auto;
+    padding: 0px;
+    width: 150px;
+    height: 80px;
+    color: white;
+    font-size: 50px;
+    margin-top: -140px;
+    transition: 3s;
+}
+
+#main:hover {
+    &>img {
+        transform: rotate(360deg) scale(4);
+    }
+
+    &~div {
+        margin-top: 0px;
+        color: navy;
+        transition: 2s;
+    }
+}
