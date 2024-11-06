@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 header {
@@ -11,8 +12,7 @@ header {
 main {
     border: 1px solid black;
     width: 100%;
-    height: 500px;
-    background: green;
+    height: 800px;
 }
 
 footer {
@@ -59,13 +59,14 @@ ol {
     list-style: none;
     height: 50%;
     background: #2db400;
+    border-radius: 10px;
 
     &>:nth-child(4) a {
         border-right: none
     }
 }
 
-a {
+header a {
     text-decoration: none;
     border-right: 1px solid white;
     padding-right: 10px;
@@ -76,4 +77,89 @@ li {
     margin-top: 10px;
     width: 25%;
     text-align: right;
+}
+
+div {
+    width: 100%;
+    height: 50%;
+    border: 1px solid black;
+    display: flex;
+}
+
+div:nth-of-type(1) {
+    &>:nth-child(1) {
+        width: 40%;
+        height: 100%;
+        background: red;
+    }
+
+    &>:nth-child(2) {
+        width: 40%;
+        height: 100%;
+        background: blue;
+    }
+
+    &>:nth-child(3) {
+        width: 20%;
+        height: 100%;
+        background: yellow;
+    }
+}
+
+div:nth-of-type(2) {
+    &>:nth-child(1) {
+        width: 30%;
+        height: 100%;
+        text-align: center;
+
+        &>audio {
+            display: none;
+        }
+
+        &>div {
+            margin: 0 auto;
+            margin-top: 20px;
+            width: 60%;
+            height: 60%;
+            background-image: url(./아파트\ 앨범\ 자켓.png);
+            background-size: 100% 100%;
+        }
+
+        &:hover {
+            &>div {
+                margin-top: -100px;
+                width: 450px;
+                height: 450px;
+                background-image: url(./레코드판.jpg);
+                border-radius: 50%;
+                scale: 0.5;
+                animation: turn 1s infinite;
+            }
+
+
+            &>audio {
+                margin: 0 auto;
+                display: block;
+                margin-top: -100px;
+            }
+        }
+    }
+
+    &>:nth-child(2) {
+        width: 30%;
+        height: 100%;
+        text-align: center;
+    }
+
+    &>:nth-child(3) {
+        width: 40%;
+        height: 100%;
+        background: black;
+    }
+}
+
+@keyframes turn {
+    100% {
+        transform: rotate(360deg)
+    }
 }
