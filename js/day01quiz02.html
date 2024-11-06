@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function func1() {
+            let div = document.getElementById("main");
+            div.className = "main"
+        }
+        function func2() {
+            let div = document.querySelector("#main");
+            div.className = "main2"
+        }
+        function func3() {
+            let div = document.getElementById("main");
+            div.className = "main3"
+        }
+        function func4() {
+            let div = document.querySelector("#main");
+            div.className = "main4"
+        }
+    </script>
+</head>
+<style>
+    .main {
+        color: aqua;
+        background: red;
+    }
+
+    .main2 {
+        color: black;
+        background: white;
+    }
+
+    .main3 {
+        display: none;
+    }
+
+    .main4 {
+        display: block;
+    }
+</style>
+
+<body>
+    <div id="main" style="text-align: center;">홍길동</div>
+    <hr>
+    <div style="text-align: center;">
+        <button onclick="func1()">변경</button>
+        <button onclick="func2()">되돌리기</button><br>
+        <button onclick="func3()">숨기기</button>
+        <button onclick="func4()">보이기</button>
+    </div>
+</body>
+
+</html>

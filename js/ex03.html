@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="ex04.js" charset="UTF-8"></script>
+    <script>
+        function func1(){
+            let name="김개똥"
+            name="홍길동"
+            //let name=1111; let이 반복되어서 에러 발생
+            var age = "20";
+            age=50;
+            var age = "aaaa"; //에러 발생 x, var 반복선언 가능
+            const key = "안녕"; //값 고정
+            //key= "변경"; 변경시 에러 발생
+
+            const str01='1111\aaaa\eeee'
+            const str02=`aaa
+            bbb
+            ccc
+            ddd`
+        }
+    </script>
+</head>
+
+<body onload="func1()"> <!-- onload는 무조건 바디에서만 사용 가능 -->
+    <div id="div1"></div>
+</body>
+
+</html>

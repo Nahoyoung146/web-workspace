@@ -1,0 +1,49 @@
+#div1 {
+    width: 100px;
+    height: 100px;
+    background: navy;
+    animation: box 1s;
+    animation-fill-mode: forwards;
+    /*시간이 100%일때 정지함. 그러므로 시간이 100%가 무조건 있어야 함*/
+    opacity: 0;
+}
+
+@keyframes box {
+    100% {
+        margin-left: 100px;
+        opacity: 1;
+    }
+}
+
+#div2 h1 {
+    position: relative;
+    opacity: 0;
+}
+
+#left {
+    left: -150px;
+    animation: left 3s;
+    animation-fill-mode: forwards;
+}
+
+#right {
+    right: -700px;
+    animation: right 3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes left {
+    100% {
+        left: 300px;
+        opacity: 1;
+        color: blue;
+    }
+}
+
+@keyframes right {
+    100% {
+        right: -250px;
+        opacity: 1;
+        color: red;
+    }
+}

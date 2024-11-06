@@ -1,0 +1,43 @@
+#div1 {
+    width: 200px;
+    height: 200px;
+    background: red;
+    animation: abc 10s;
+}
+
+@keyframes abc {
+    20% {
+        /*n% > n/10만큼 동작수행하고 돌아오는데 나머지 시간 할애*/
+        margin-left: 400px;
+    }
+}
+
+#div2 {
+    width: 200px;
+    height: 200px;
+    background: gold;
+    animation: aaa 10s;
+}
+
+@keyframes aaa {
+    0% {
+        margin-left: 400px;
+        background: green;
+    }
+}
+
+#div3 {
+    width: 200px;
+    height: 200px;
+    background: white;
+    animation: bbb 5s infinite;
+    /* infinite는 무한반복 */
+    animation-delay: 2s;
+}
+
+@keyframes bbb {
+    50% {
+        margin-left: 400px;
+        background: gold;
+    }
+}

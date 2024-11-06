@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function func1() {
+            /* 문단 주석 */
+            // document.write("출력")
+            let div = document.getElementById("div1")
+            console.log(div)
+            div.innerHTML = "<h1>냠냠</h1>"
+            let div2 = document.querySelector("#div2")
+            div2.innerHTML = "<h1>바꿔~~~~~</h1>"
+        };
+    </script>
+</head>
+
+<body>
+    <div id="div2">querySelector</div>
+    <div id="div1">안녕하세요</div>
+    <button onclick="func1()">클릭</button>
+</body>
+
+</html>
