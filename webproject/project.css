@@ -79,18 +79,47 @@ li {
     text-align: right;
 }
 
-div {
+main>div {
     width: 100%;
     height: 50%;
     border: 1px solid black;
     display: flex;
 }
 
-div:nth-of-type(1) {
+main>div:nth-of-type(1) {
     &>:nth-child(1) {
         width: 40%;
         height: 100%;
-        background: red;
+
+        &>:nth-child(1) {
+            width: 100%;
+            height: 100%;
+            background-image: url(./미니게임천국.jpg);
+            background-size: 25% 25%;
+            opacity: 0.2;
+        }
+
+        &>:nth-child(2) {
+            width: 60%;
+            height: 60%;
+            margin: 0px auto;
+            background: brown;
+            margin-top: -390px;
+            text-align: center;
+
+            &>img {
+                width: 100%;
+                height: 100%;
+            }
+
+            &>a {
+                position: relative;
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 25px;
+                color: black;
+            }
+        }
     }
 
     &>:nth-child(2) {
@@ -106,7 +135,7 @@ div:nth-of-type(1) {
     }
 }
 
-div:nth-of-type(2) {
+main>div:nth-of-type(2) {
     &>:nth-child(1) {
         width: 30%;
         height: 100%;
@@ -136,37 +165,66 @@ div:nth-of-type(2) {
                 animation: turn 1s infinite;
             }
 
-
             &>audio {
                 margin: 0 auto;
                 display: block;
                 margin-top: -100px;
             }
         }
+
+        &>h1 {
+            margin-top: 20px;
+            text-align: center;
+        }
     }
 
     &>:nth-child(2) {
         width: 30%;
         height: 100%;
-        text-align: center;
+
+        &>h1 {
+            margin-top: 20px;
+            text-align: center;
+        }
     }
 
     &>:nth-child(3) {
         width: 40%;
         height: 100%;
+        text-align: center;
 
-        &>div:nth-child(1){
-            margin: 0px auto;
-            width: 80%;
-            height: 50%;
-            background: blue
-        }
+        &>h1 {
+            margin-top: 20px;
 
-        &>div:nth-child(2){
-            margin: 0px auto;
-            width: 80%;
-            height: 50%;
-            background: green
+            &~a:nth-of-type(1) {
+                display: inline-block;
+                margin-top: -10px;
+                font-size: 30px;
+                text-decoration: none;
+                color: black;
+            }
+
+            &~a:nth-of-type(2) {
+                display: inline-block;
+                margin-top: 10px;
+                font-size: 30px;
+                text-decoration: none;
+                color: black;
+            }
+
+            &~fieldset {
+                width: 95%;
+                height: 30%;
+                margin: 0 auto;
+                line-height: 25px;
+
+                &>div {
+                    border: none;
+                    display: inline-block;
+                    width: 55%;
+                    margin-left: 30px;
+                }
+            }
         }
     }
 }
