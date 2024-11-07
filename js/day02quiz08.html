@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let num = 0
+        let order = 1
+        let s;
+        let e;
+        function init() {
+            addEventListener("keydown", kDown)
+        }
+
+        function kDown(event) {
+            switch (event.code) {
+                case 'Space':
+                    order++
+                    num += 10;
+                    document.getElementById("main2").style.marginLeft = `${num}px`
+                    document.getElementById("main1").innerHTML = "START"
+                    document.getElementById("main2").src = `../resources/images/p${order}.png`
+                    console.log(num)
+                    if (order == 8)
+                        order = 0
+
+                    if (s == undefined) {
+                        s = new Date().getTime();
+                        console.log(s)
+                    }
+
+                    if (num == 410) {
+                        e = new Date().getTime();
+                        document.getElementById("main1").innerHTML = "종료 : " + (e - s) / 1000
+                    }
+            }
+        }
+    </script>
+</head>
+
+<body onload="init()">
+    <div style="overflow: hidden; width: 500px; border: 1px solid black; margin: 0 auto;">
+        <div id="main1" style="text-align: center;">READY</div><br>
+        <hr>
+        <img src="../resources/images/p1.png" id="main2" style="width: 100px; height: 100px;">
+    </div>
+</body>
+
+</html>

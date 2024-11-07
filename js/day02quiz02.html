@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let flag=true;
+        function alter(){
+            let btn=document.getElementById("btn")
+            let div=document.getElementById("main")
+            btn.innerHTML="되돌리기"
+            let color=flag?"alter":""
+            let btnMsg=flag?"되돌리기":"변경";
+            flag = !flag
+            btn.innerHTML=btnMsg
+            div.className=color
+        }
+    </script>
+    <style>
+        .alter{
+            background: gold;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">div</div>
+    <button onclick="alter()" id="btn">변경</button>
+</body>
+</html>

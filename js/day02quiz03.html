@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let flag=true
+        let div
+        let size = 15
+        function alter(){
+            div = document.getElementById("main")
+            div.className=flag?"alter":""
+            flag=!flag
+        }
+
+        function up() {
+            size += 3
+            div = document.getElementById("main")
+            div.style.fontSize = size + "px"
+        }
+
+        function down() {
+            size -= 3
+            div = document.getElementById("main")
+            div.style.fontSize = size + "px"
+        }
+    </script>
+    <style>
+        .alter{
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">div</div>
+    <button onclick="alter()">변경</button>
+    <button onclick="up()">+</button>
+    <button onclick="down()">-</button>
+</body>
+
+</html>

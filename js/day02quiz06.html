@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let saveId = 'javascript'
+        function input() {
+            if (document.getElementById("txt1").value.length < 4) {
+                document.getElementById("div").innerHTML = "길이가 짧습니다(4자 이상)"
+                document.getElementById("txt1").focus()
+            }
+
+            else {
+                if (document.getElementById("txt1").value == saveId) {
+                    document.getElementById("div").innerHTML = "존재하는 id입니다."
+                }
+                else {
+                    document.getElementById("div").innerHTML = "가입 가능한 id입니다."
+                }
+            }
+        }
+
+        function change() {
+            if (document.getElementById("txt2").value == document.getElementById("txt3").value)
+                document.getElementById("div").innerHTML = "일치합니다."
+            else {
+                document.getElementById("div").innerHTML = "비밀번호 일치하지 않음."
+                document.getElementById("txt2").value = ""
+                document.getElementById("txt3").value = ""
+                document.getElementById("txt2").focus()
+            }
+
+        }
+
+        function init() {
+            if (document.getElementById("txt1").value == "") {
+                document.getElementById("div").innerHTML = "id 필수 항목"
+                document.getElementById("txt1").focus()
+            }
+
+            else if (document.getElementById("txt2").value == "") {
+                document.getElementById("div").innerHTML = "pwd 필수 항목"
+                document.getElementById("txt2").focus()
+            }
+
+            else if (document.getElementById("txt3").value == "") {
+                document.getElementById("div").innerHTML = "pwd_check 필수 항목"
+                document.getElementById("txt3").focus()
+            }
+
+            else if (document.getElementById("txt4").value == "") {
+                document.getElementById("div").innerHTML = "name 필수 항목"
+                document.getElementById("txt4").focus()
+            }
+
+            else
+                document.getElementById("div").innerHTML = `
+    <h1>입력 데이터</h1><br><br>
+    id : <strong>${document.getElementById("txt1").value}</strong><br>
+    pwd : <strong>${document.getElementById("txt2").value}</strong><br>
+    pwd_check : <strong>${document.getElementById("txt3").value}</strong><br>
+    name : <strong>${document.getElementById("txt4").value}</strong>`
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" id="txt1" placeholder="input id" oninput="input()"><br>
+    <input type="text" id="txt2" placeholder="input password"><br>
+    <input type="text" id="txt3" placeholder="password check" onchange="change()"><br>
+    <input type="text" id="txt4" placeholder="input name"><br>
+    <div id="div"></div>
+    <button onclick="init()">가입</button>
+</body>
+
+</html>

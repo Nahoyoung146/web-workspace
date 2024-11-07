@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let num = 0
+        let num1 = 0
+        let num2 = 0
+        function init() {
+            addEventListener("keydown", kDown)
+        }
+
+        function kDown(event) {
+            switch (event.code) {
+                case 'ArrowUp':
+                    console.log(event.code)
+                    num--;
+                    document.getElementById("main").style.marginTop = `${num}px`
+                    break;
+                case 'ArrowDown':
+                    num++;
+                    document.getElementById("main").style.marginTop = `${num}px`
+                    break;
+                case 'Space':
+                    console.log(event.code)
+                    num1++;
+                    document.getElementById("main").style.marginLeft = `${num1}px`
+                    break;
+                case 'ArrowLeft':
+                    num1--;
+                    document.getElementById("main").style.marginLeft = `${num1}px`
+                    break;
+            }
+        }
+    </script>
+</head>
+
+<body onload="init()">
+    <img src="../resources/images/16.gif" id="main">
+</body>
+
+</html>

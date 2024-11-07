@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function btn() {
+            let txt1 = document.getElementById("txt1")
+            let txt2 = document.getElementById("txt2")
+            if (txt1.value == txt2.value)
+                document.getElementById("div").innerHTML = "일치합니다!!!"
+
+            if (txt1.value != txt2.value) {
+                document.getElementById("div").innerHTML = "다시 입력!!!"
+                //div.style.color="red"
+                document.getElementById("div").className = "false"
+                txt1.value = ""
+                txt2.value = ""
+                txt1.focus()
+            }
+        }
+    </script>
+    <style>
+        .false {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="txt1" placeholder="비밀번호 입력"><br>
+    <input type="text" id="txt2" placeholder="비밀번호 확인">
+    <div id="div"></div>
+    <button onclick="btn()">클릭</button>
+</body>
+
+</html>

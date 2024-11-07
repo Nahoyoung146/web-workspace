@@ -19,7 +19,7 @@
             border: 1px solid black;
         }
 
-        p::before {
+        /* p::before {
             content: '<before>';
             color: red;
         }
@@ -27,7 +27,7 @@
         p::after {
             content: '<after>';
             color: blue;
-        }
+        } */
 
         a:link {
             color: orange;
@@ -58,6 +58,27 @@
         button:enabled {
             background: #ccc;
         }
+
+        .parent {
+            font-size: 16px;
+        }
+
+        .child {
+            font-size: 80%;
+        }
+
+        .child {
+            font-size: 80%;
+        }
+
+        .p {
+            margin: 0 auto;
+            width: 80%;
+            height: 100px;
+            border: 1px solid black;
+            text-align: center;
+            line-height: 50px;
+        }
     </style>
 </head>
 
@@ -72,7 +93,20 @@
     <input type="checkbox">
     <label>책 읽기</label>
     <input type="text" disabled>
-    <button disabled>버튼</button>
+    <button disabled>버튼</button><br>
+    <div class="parent">
+        parent
+        <div class="child">
+            child
+            <div class="child to child">
+                chiid to chiid
+            </div>
+        </div>
+    </div>
+    <p class="p">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, error! Id dolore officiis commodi est ad enim
+        earum magnam possimus assumenda velit qui dignissimos eos nihil mollitia distinctio.
+    </p>
 
 </body>
 
