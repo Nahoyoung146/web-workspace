@@ -8,7 +8,6 @@
     <script>
         let num = 0
         let num1 = 0
-        let num2 = 0
         function init() {
             addEventListener("keydown", kDown)
         }
@@ -16,7 +15,6 @@
         function kDown(event) {
             switch (event.code) {
                 case 'ArrowUp':
-                    console.log(event.code)
                     num--;
                     document.getElementById("main").style.marginTop = `${num}px`
                     break;
@@ -24,15 +22,13 @@
                     num++;
                     document.getElementById("main").style.marginTop = `${num}px`
                     break;
-                case 'Space':
-                    console.log(event.code)
+                case 'ArrowRight':
                     num1++;
                     document.getElementById("main").style.marginLeft = `${num1}px`
                     break;
                 case 'ArrowLeft':
                     num1--;
                     document.getElementById("main").style.marginLeft = `${num1}px`
-                    break;
             }
         }
     </script>

@@ -30,6 +30,7 @@
             const ss = new Date();
             s = ss.getTime();
             console.log("시작 시간 : ", s)
+            document.getElementById("clock").innerHTML = `시작 시간 : ${s}`
         }
 
         function end() {
@@ -37,6 +38,7 @@
             e = ss.getTime();
             console.log("종료 시간 : ", e)
             console.log("사용 시간 : ", (e - s) / 1000 + "초") //1/1000초 단위
+             document.getElementById("clock").innerHTML = `종료 시간 : ${e}<br>사용 시간 : ${(e-s)/1000}초`
         }
         function init() {
             // addEventListener("click",test)

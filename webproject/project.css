@@ -85,7 +85,7 @@ main>div {
 }
 
 main>div:nth-of-type(1) {
-    border: 1px solid black;
+    border-bottom: 1px solid black;
 
     &>:nth-child(1) {
         width: 40%;
@@ -114,7 +114,6 @@ main>div:nth-of-type(1) {
 
             &>a {
                 position: relative;
-                text-decoration: none;
                 font-weight: bold;
                 font-size: 25px;
                 color: black;
@@ -125,7 +124,20 @@ main>div:nth-of-type(1) {
     &>:nth-child(2) {
         width: 40%;
         height: 100%;
-        background: blue;
+        text-align: center;
+            & > img{
+                width: 60%;
+                height: 60%;
+                margin: 0 auto;
+                margin-top: 40px;
+            }
+            & > a{
+                display: inline-block;
+                color: black;
+                font-weight: bold;
+                font-size: 25px;
+                margin-top: 20px;
+            }
     }
 
     &>:nth-child(3) {
@@ -200,7 +212,6 @@ main>div:nth-of-type(2) {
                 display: inline-block;
                 margin-top: -10px;
                 font-size: 30px;
-                text-decoration: none;
                 color: black;
             }
 
@@ -208,7 +219,6 @@ main>div:nth-of-type(2) {
                 display: inline-block;
                 margin-top: 10px;
                 font-size: 30px;
-                text-decoration: none;
                 color: black;
             }
 
