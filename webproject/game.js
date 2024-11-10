@@ -23,6 +23,9 @@ function Bullet() { //총알을 만들기 위한 자료
     }
 
     bulletList.push(this)
+    this.update = function () {
+        this.y -= 7;
+    }
 }
 
 function loadImage() { // 각 요소별 이미지 가져오기
@@ -87,12 +90,17 @@ function kUp(event) {
 function createBullet() {
     let b = new Bullet() // 총알 하나 생성
     b.init()
-    console.log("새로운 총알 리스트", bulletList)
+    // console.log("새로운 총알 리스트", bulletList)
 }
 
 function render() {
     ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
     ctx.drawImage(spaceshipImage, spaceshipX, spaceshipY);
+
+    // 총알의 y좌표 업데이트하는 함수 호출
+    for (let i = 0; i < bulletList.length; i++) {
+        bulletList[i].update()
+    }
 
     for (let i = 0; i < bulletList.length; i++) {
         ctx.drawImage(bulletImage, bulletList[i].x, bulletList[i].y)
