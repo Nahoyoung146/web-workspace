@@ -9,6 +9,8 @@ canvas.height = 700;
 document.body.appendChild(canvas); //html의 body에다가 자식으로 canvas 갇다 붙이기
 
 let backgroundImage, spaceshipImage, bulletImage, enemyImage, gameOverImage;
+let gameOver = false //true이면 게임이 끝남, false이면 게임이 안끝남
+let score = 0
 
 // 우주선 좌표 > 우주선 죄표는 계속 바뀌기 때문에 따로 뺴줌
 let spaceshipX = 160
@@ -20,25 +22,47 @@ function Bullet() { //총알을 만들기 위한 자료
     this.init = function () {
         this.x = spaceshipX + 25
         this.y = spaceshipY - 30
+        this.alive = true //true면 살아있는 총알, false면 죽은 총알
     }
 
     bulletList.push(this)
     this.update = function () {
         this.y -= 7;
     }
+
+    this.checkHit = function () {
+        for (let i = 0; i < enemyList.length; i++) {
+            if (this.y <= enemyList[i].y && this.x >= enemyList[i].x && this.x <= enemyList[i].x + 64) {
+                console.log(enemyList)
+                // -> 총알이 죽게됨 적군의 우주선이 없어짐, 점수 획득 
+                score++;
+                this.alive = false // 죽은 총알
+                enemyList.splice(i, 1)
+            }
+        }
+    }
 }
 
 // 외계인도 지속적으로 여러개가 필요하기 때문에 따로 함수로 생성
 let enemyList = []//외계인들을 저장하는 리스트
-function Enemy() { //총알을 만들기 위한 자료
+function generateRandomValue(min, max) {
+    let randomNum = Math.floor(Math.random() * (max - min + 1)) + min
+    return randomNum
+}
+function Enemy() { //외계인을 만들기 위한 자료
     this.init = function () {
-        this.x = 10
+        this.x = generateRandomValue(0, canvas.width - 64)
         this.y = 0
     }
 
     enemyList.push(this)
     this.update = function () {
-        this.y += 7;
+        this.y += 1;
+
+        if (this.y >= canvas.height - 64) {
+            gameOver = true
+            console.log(gameOver)
+        }
     }
 }
 
@@ -108,24 +132,31 @@ function createBullet() {
 }
 
 function createEnemy() {
-    let e = new Enemy() // 외계인 하나 생성
-    e.init()
-    console.log("새로운 외계인 리스트", enemyList)
+    const interval = setInterval(function () {
+        let e = new Enemy() // 외계인 하나 생성
+        e.init()
+    }, 1000)  //(호출하고 싶은 함수, 시간)
+    // console.log("새로운 외계인 리스트", enemyList)
 }
 
-
 function render() {
-    createEnemy()
     ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
     ctx.drawImage(spaceshipImage, spaceshipX, spaceshipY);
+    ctx.fillText(`Score : ${score}`, 20, 20)
+    ctx.fillStyle = "black"
+    ctx.font = "20px Arial"
 
-    // 총알의 y좌표 업데이트하는 함수 호출
+    // 총알의 y좌표 업데이트하는 함수 호출, 동시에 총알이 적군을 쳤는지 동시 확인
     for (let i = 0; i < bulletList.length; i++) {
-        bulletList[i].update()
+        if (bulletList[i].alive) {
+            bulletList[i].update()
+            bulletList[i].checkHit()
+        }
     }
 
     for (let i = 0; i < bulletList.length; i++) {
-        ctx.drawImage(bulletImage, bulletList[i].x, bulletList[i].y)
+        if (bulletList[i].alive)
+            ctx.drawImage(bulletImage, bulletList[i].x, bulletList[i].y)
     }
 
     // 외계인의 y좌표 업데이트하는 함수 호출
@@ -133,19 +164,24 @@ function render() {
         enemyList[i].update()
     }
 
-    for (let i = 0; i < bulletList.length; i++) {
+    for (let i = 0; i < enemyList.length; i++) {
         ctx.drawImage(enemyImage, enemyList[i].x, enemyList[i].y)
     }
 }
 
 function main() {
-    render()
-    // console.log("animation calls main function")
-    requestAnimationFrame(main)
+    if (!gameOver) { //gameOver가 false면 main함수 중지
+        render()
+        // console.log("animation calls main function")
+        requestAnimationFrame(main)
+    }
+    else
+        ctx.drawImage(gameOverImage, 10, 100, 300, 300)
 }
 
 loadImage() //이미지 가져오기
 setupKeyboardListener();
+createEnemy()
 main() //이미지 그려주기
 
 // 방향키를 누르면
@@ -158,3 +194,13 @@ main() //이미지 그려주기
 //3. 발사된 총알들은 총알 배열에 저장을 한다.
 //4. 총알들은 x,y 좌표값이 있어야 한다.
 //5. 총알 배열을 가지고 render 그려준다.
+
+// 적군의 특징
+// 1. 적군의 위치가 랜덤하다.
+// 2. 적군은 밑으로 내려온다.
+// 3. 1초마다 하나씩 적군이 나온다.
+// 4. 적군의 우주선이 바닥에 닿으면 게임 오버
+// 5. 적군과 총알이 만나면 우주선이 사라진다 점수 1점 획득
+
+// 총알.y <= 적군 And 총알.x >= 적군.x and 총알.x <= 적군.x + 적군의 가로 길이
+// -> 닿았다
