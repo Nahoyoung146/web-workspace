@@ -9,6 +9,8 @@
         const Func = (tr) => {
             for (let i = 1; i < 8; i++) {
                 if (document.getElementById(i) != tr) {
+                    console.log(tr)
+                    console.log(document.getElementById(i))
                     if (document.getElementById(i).style.background == "gold") {
                         document.getElementById(i).style.background = "";
                     }
