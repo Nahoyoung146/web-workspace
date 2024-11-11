@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const test01 = () => {
+            const city = ["서울", "부산", "인천"]
+            for (let i = 0; i < city.length; i++) {
+                console.log(city[i])
+            }
+            city[3] = 12345;
+            console.log(city)
+            console.log(city.join()) //하나의 문자열이기 떄문에 index로 접근 불가능
+            console.log(typeof (city.join()))
+            console.log(typeof (city))
+            console.log(city.join('안녕'))
+            city.push('111', '222')
+            console.log(city)
+            city.pop();
+            console.log("pop : ", city)
+
+            city.unshift("안녕", "반갑")
+            console.log(city)
+            city.shift()
+            console.log("shift : ", city)
+
+            let data = city.concat('555', '666')
+            console.log(data)
+        }
+        test01();
+        const city = ["서울", "부산", "인천"]
+        const printArr = (item, index) => {
+            console.log(item, index)
+        }
+        city.forEach(printArr) //return 적용 할 수 없다.
+        city.forEach((item) => {
+            console.log(item)
+        })
+
+        const mapArr = (value) => {
+            return `<b style="color:red;">${value}</b>`
+        }
+        const result = city.map(mapArr)
+        document.write(result)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

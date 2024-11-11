@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const data = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+        const filterArr01 = (value, index) => {
+            return value >= 50;
+        }
+        console.log(data.filter(filterArr01))
+        console.log(data.map((v) => {
+            return v >= 50;
+        }))
+        const filterArr02 = (value, index) =>
+            value >= 50;
+
+        console.log(data.filter(filterArr02))
+
+        const filterArr03 = (value, index) =>
+            value >= 50;
+
+        console.log(data.filter((value, index) => value >= 50))
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

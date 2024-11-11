@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const Func = (tr) => {
+            for (let i = 1; i < 8; i++) {
+                if (document.getElementById(i) != tr) {
+                    if (document.getElementById(i).style.background == "gold") {
+                        document.getElementById(i).style.background = "";
+                    }
+                }
+            }
+
+            if (tr.style.background == "") {
+                tr.style.background = "gold"
+            }
+
+            else if (tr.style.background == "gold") {
+                tr.style.background = ""
+            }
+        }
+    </script>
+    <style>
+        tr {
+            cursor: pointer;
+
+            &:hover {
+                background: grey;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <table border="1" align="center">
+        <tr>
+            <th>아이디</th>
+            <th>이름</th>
+        </tr>
+        <tr id="1" onclick="Func(this)">
+            <td>1. aaa</td>
+            <td>1. 홍길동</td>
+        </tr>
+        <tr id="2" onclick="Func(this)">
+            <td>2. aaa</td>
+            <td>2. 홍길동</td>
+        </tr>
+        <tr id="3" onclick="Func(this)">
+            <td>3. aaa</td>
+            <td>3. 홍길동</td>
+        </tr>
+        <tr id="4" onclick="Func(this)">
+            <td>4. aaa</td>
+            <td>4. 홍길동</td>
+        </tr>
+        <tr id="5" onclick="Func(this)">
+            <td>5. aaa</td>
+            <td>5. 홍길동</td>
+        </tr>
+        <tr id="6" onclick="Func(this)">
+            <td>6. aaa</td>
+            <td>6. 홍길동</td>
+        </tr>
+        <tr id="7" onclick="Func(this)">
+            <td>7. aaa</td>
+            <td>7. 홍길동</td>
+        </tr>
+    </table>
+</body>
+
+</html>

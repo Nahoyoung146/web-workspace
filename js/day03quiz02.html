@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const Func = (tr) => {
+            for (let i = 1; i < 8; i++) {
+                if (document.getElementById(i) != tr) {
+                    if (document.getElementById(i).style.background == "gold") {
+                        document.getElementById(i).style.background = "";
+                    }
+                }
+            }
+
+            if (tr.style.background == "") {
+                tr.style.background = "gold"
+            }
+
+            else if (tr.style.background == "gold") {
+                tr.style.background = ""
+            }
+        }
+
+        const tableFunc = () => {
+            let msg = ` <table border="1" align="center">
+        <tr>
+            <th>아이디</th>
+            <th>이름</th>
+        </tr>`
+            for (i = 1; i <= 7; i++) {
+                msg += ` <tr id=${i} onclick="Func(this)">
+            <td>${i}. aaa</td>
+            <td>${i}. 홍길동</td>
+        </tr>`
+            }
+            msg += `</table>`
+            document.getElementById("table").innerHTML = msg;
+        }
+
+    </script>
+    <style>
+        tr {
+            cursor: pointer;
+
+            &:hover {
+                background: grey;
+            }
+        }
+    </style>
+</head>
+
+<body onload="tableFunc()">
+    <div id="table"></div>
+
+</body>
+
+</html>

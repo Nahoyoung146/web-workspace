@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function sumFunc(a1, a2) {
+            console.log(`a1 : ${a1}, a2 : ${a2}`)
+            return a1 + a2;
+        }
+        let n1 = 10;
+        let n2 = 20;
+        let sum = sumFunc(n1, n2);
+        console.log("sum : " + sum)
+
+        function testFunc01() {
+            let arr = [1234, "안녕하세요"]
+            return [1234, "안녕하세요"]; //return arr;
+        }
+        const result = testFunc01();
+        console.log("result : ", result)
+        console.log("result[0] : ", result[0])
+
+        function testFunc02(x, y) {
+            console.log("test02 실행", x, y)
+        }
+        testFunc02()
+        testFunc02(1)
+        testFunc02(100, 200)
+        testFunc02(100, 200, 300)
+
+        function testFunc03() {
+            console.log("test03 : ", arguments)
+            for (let i = 0; i < arguments.length; i++) {
+                console.log(arguments[i])
+            }
+        }
+        testFunc03(100, 200, 300)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

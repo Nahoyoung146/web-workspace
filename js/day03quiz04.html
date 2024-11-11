@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let userInfo = [{ 'id': 'aaa', 'name': '홍길동', 'age': 20 },
+        { 'id': 'bbb', 'name': '김개똥', 'age': 30 },
+        { 'id': 'ccc', 'name': '고길동', 'age': 40 }
+        ];
+
+        function func1() {
+            let msg = "";
+            msg += '<table border="1" align="center"><tr><th>아이디</th><th>이름</th><th>나이</th></tr>'
+            userInfo.forEach((userInfo) => {
+                msg += `<tr><td>${userInfo.id}</td>
+                    <td onclick="func(this)">${userInfo.name}</td><td>${userInfo.age}</td></tr>`
+            });
+            msg += `</table>`
+            document.getElementById("main").innerHTML = msg
+        }
+
+        function func2() {
+            let btn2 = document.getElementById("btn2").value
+            let msg = "";
+            msg += '<table border="1" align="center"><tr><th>아이디</th><th>이름</th><th>나이</th></tr>'
+            for (let i = 0; i < userInfo.length; i++) {
+                console.log(btn2)
+                console.log(userInfo[i].id)
+                if (btn2 == userInfo[i].id) {
+                    msg += `<tr><td>${userInfo[i].id}</td><td onmouseover="over(this)">${userInfo[i].name}</td><td>${userInfo[i].age}</td></tr>`
+                    break;
+                }
+            }
+            msg += `</table>`
+            document.getElementById("main").innerHTML = msg
+        }
+
+        function func3() {
+            let btn3 = document.getElementById("btn3").value
+            userInfo = userInfo.filter((value, index) => {
+                if (btn3 != value.id) {
+                    return userInfo[index]
+                }
+            })
+            let msg = "";
+            msg += '<table border="1" align="center"><tr><th>아이디</th><th>이름</th><th>나이</th></tr>'
+            userInfo.forEach((userInfo) => {
+                msg += `<tr><td>${userInfo.id}</td><td onmouseover="over(this)">${userInfo.name}</td><td>${userInfo.age}</td></tr>`
+            });
+            msg += `</table>`
+            document.getElementById("main").innerHTML = msg
+        }
+
+        const func = (td) => {
+            console.log("td : ", td.innerHTML)
+            const user = userInfo.filter((member) =>
+                (td.innerHTML == member.name) ? member : "")[0];
+            const msg = `<b>아이디</b> : ${user.id}<br>
+      <b>이름</b> : ${user.name}<br>
+      <b>나이</b> : ${user.age}<br>`
+            document.getElementById("main").innerHTML = msg;
+        }
+    </script>
+</head>
+
+<body align="center">
+    <div id="main">목록을 보여 줍니다.</div>
+    <hr>
+    <button onclick="func1()">모든 회원 보기</button><br>
+    <hr>
+    <input id="btn2" type="text" placeholder="input id"><br>
+    <button onclick="func2()">특정 회원 조회</button><br>
+    <hr>
+    <input id="btn3" type="text" placeholder="input id"><br>
+    <button onclick="func3()">특정 회원 삭제</button>
+</body>
+
+</html>

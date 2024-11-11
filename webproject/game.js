@@ -28,6 +28,20 @@ function Bullet() { //총알을 만들기 위한 자료
     }
 }
 
+// 외계인도 지속적으로 여러개가 필요하기 때문에 따로 함수로 생성
+let enemyList = []//외계인들을 저장하는 리스트
+function Enemy() { //총알을 만들기 위한 자료
+    this.init = function () {
+        this.x = 10
+        this.y = 0
+    }
+
+    enemyList.push(this)
+    this.update = function () {
+        this.y += 7;
+    }
+}
+
 function loadImage() { // 각 요소별 이미지 가져오기
     backgroundImage = new Image();
     backgroundImage.src = "./image/bg3.jpg"
@@ -93,7 +107,15 @@ function createBullet() {
     // console.log("새로운 총알 리스트", bulletList)
 }
 
+function createEnemy() {
+    let e = new Enemy() // 외계인 하나 생성
+    e.init()
+    console.log("새로운 외계인 리스트", enemyList)
+}
+
+
 function render() {
+    createEnemy()
     ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
     ctx.drawImage(spaceshipImage, spaceshipX, spaceshipY);
 
@@ -104,6 +126,15 @@ function render() {
 
     for (let i = 0; i < bulletList.length; i++) {
         ctx.drawImage(bulletImage, bulletList[i].x, bulletList[i].y)
+    }
+
+    // 외계인의 y좌표 업데이트하는 함수 호출
+    for (let i = 0; i < enemyList.length; i++) {
+        enemyList[i].update()
+    }
+
+    for (let i = 0; i < bulletList.length; i++) {
+        ctx.drawImage(enemyImage, enemyList[i].x, enemyList[i].y)
     }
 }
 
