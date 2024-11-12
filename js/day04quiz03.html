@@ -12,7 +12,7 @@
             let table = document.createElement("table");
             image.border = 1
             for (let i = 0; i < list.length; i++) {
-                image += `<td><img src="../resources/images/${list[i]}" onclick="display(this)"></td>`
+                image += `<td><img src=../resources/images/${list[i]} onclick=display(this)></td>`
 
                 if (i == list.length / 2 - 1)
                     image += "</tr><tr>"

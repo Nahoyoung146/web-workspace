@@ -14,7 +14,13 @@
             x = 0
         else
             x++
-        document.getElementById("pic").src = `../resources/images/${list[x]}.png`;
+        document.getElementById("main").innerHTML = ` <img src=../resources/images/${list[x]}.png onmouseover=stop() onmouseout=auto()>
+    <hr><input type=radio id=0 onclick=func(this) name=imgBtn>
+        <input type=radio id=1 onclick=func(this) name=imgBtn>
+        <input type=radio id=2 onclick=func(this) name=imgBtn>
+        <input type=radio id=3 onclick=func(this) name=imgBtn>
+        <input type=radio id=4 onclick=func(this) name=imgBtn>
+        <!-- radio태그 name 있어야지 하나만 선택 -->`;
         document.getElementById(x).checked = true
         stopval = setTimeout(auto, 1000)
     }
@@ -35,28 +41,18 @@
             x = list.length - 1;
         else
             x = radio.id - 1;
-        document.getElementById("pic").src = `../images/${list[radio.id]}.png`;
-
-    }
-</script>
-<style>
-    #pic {
-        width: 100px;
-        height: 100px;
-    }
-</style>
-
-<body align="center">
-    <img src="../resources/images/p1.png" id="pic" onmouseover="stop()" onmouseout="auto()">
-    <hr>
-    <div>
-        <input type="radio" id="0" onclick="func(this)" name="imgBtn">
+        document.getElementById("main").innerHTML = ` <img src="../resources/images/${list[radio.id]}.png" onmouseover="stop()" onmouseout="auto()">
+    <hr><input type="radio" id="0" onclick="func(this)" name="imgBtn">
         <input type="radio" id="1" onclick="func(this)" name="imgBtn">
         <input type="radio" id="2" onclick="func(this)" name="imgBtn">
         <input type="radio" id="3" onclick="func(this)" name="imgBtn">
         <input type="radio" id="4" onclick="func(this)" name="imgBtn">
-        <!-- radio태그 name 있어야지 하나만 선택 -->
-    </div>
+        <!-- radio태그 name 있어야지 하나만 선택 -->`;
+    }
+</script>
+
+<body align="center" id="main">
+
 </body>
 
 </html>

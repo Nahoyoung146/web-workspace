@@ -13,7 +13,7 @@
 
         function func1() {
             let msg = "";
-            msg += '<table border="1" align="center"><tr><th>아이디</th><th>이름</th><th>나이</th></tr>'
+            msg += '<table border=1 align=center><tr><th>아이디</th><th>이름</th><th>나이</th></tr>'
             userInfo.forEach((userInfo) => {
                 msg += `<tr><td>${userInfo.id}</td>
                     <td onclick="func('${userInfo.id}')">${userInfo.name}</td><td>${userInfo.age}</td></tr>`
@@ -25,7 +25,7 @@
         function func2() {
             let btn2 = document.getElementById("btn2").value
             let msg = "";
-            msg += '<table border="1" align="center"><tr><th>아이디</th><th>이름</th><th>나이</th></tr>'
+            msg += '<table border=1 align=center><tr><th>아이디</th><th>이름</th><th>나이</th></tr>'
             for (let i = 0; i < userInfo.length; i++) {
                 if (btn2 == userInfo[i].id) {
                     msg += `<tr><td>${userInfo[i].id}</td><td>${userInfo[i].name}</td><td>${userInfo[i].age}</td></tr>`
@@ -44,7 +44,7 @@
                 }
             })
             let msg = "";
-            msg += '<table border="1" align="center"><tr><th>아이디</th><th>이름</th><th>나이</th></tr>'
+            msg += '<table border=1 align=center><tr><th>아이디</th><th>이름</th><th>나이</th></tr>'
             userInfo.forEach((userInfo) => {
                 msg += `<tr><td>${userInfo.id}</td><td>${userInfo.name}</td><td>${userInfo.age}</td></tr>`
             });

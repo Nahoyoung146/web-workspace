@@ -14,7 +14,8 @@
             x = 0
         else
             x++
-        document.getElementById("pic").src = `../resources/images/${list[x]}.png`;
+        document.getElementById("main").innerHTML = `<img src=../resources/images/${list[x]}.png
+        onmouseover=stop() onmouseout=auto()>`
         stopval = setTimeout(auto, 1000)
     }
 
@@ -29,15 +30,9 @@
     }
 
 </script>
-<style>
-    #pic {
-        width: 100px;
-        height: 100px;
-    }
-</style>
 
-<body align="center">
-    <img src="../resources/images/p1.png" id="pic" onmouseover="stop()" onmouseout="auto()">
+<body align="center" id="main">
+
 </body>
 
 </html>
