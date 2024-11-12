@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = () => {
+            let list = [1, 2, 3]
+            let dic = { id: "aaa", name: "홍길동" }
+            console.log("변경 전 list : ", list)
+            console.log("변경 후 dic : ", dic)
+
+            // let list02 = list;
+            // let list02 = [list[0], list[1], list[2]]
+            // let list02 = []
+            // list.forEach((v) => { list02.push(v) })
+            let list02 = [...list, 1111]
+            let dic02 = { ...dic }
+            list02.push("새로운 값")
+            console.log("변경 후 list : ", list)
+            console.log("list02 : ", list02)
+        }
+
+        const btn = () => {
+            const div = document.getElementById("div")
+            const img = div.firstElementChild.cloneNode(true)
+            img.src = "../resources/images/p2.png"
+            div.lastElementChild.appendChild(img)
+            console.log(div.querySelector("div"))
+        }
+    </script>
+    <style>
+        #div div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            background: gold;
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div">
+        <img src="../resources/images/p1.png">
+        <div></div>
+    </div>
+    <button onclick="btn()">클릭</button>
+</body>
+
+</html>

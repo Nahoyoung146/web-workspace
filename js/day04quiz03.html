@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = () => {
+            const list = ["p1.png", "p2.png", "p3.png", "p4.png", "p5.png", "p6.png", "p7.png", "p8.png"]
+            let image = "<tr>";
+            let table = document.createElement("table");
+            image.border = 1
+            for (let i = 0; i < list.length; i++) {
+                image += `<td><img src="../resources/images/${list[i]}" onclick="display(this)"></td>`
+
+                if (i == list.length / 2 - 1)
+                    image += "</tr><tr>"
+            }
+            image += "</tr>"
+            table.innerHTML = image
+            document.getElementById("image_table").appendChild(table)
+        }
+
+        let cnt = 0;
+        const display = (image) => {
+            const imgSize = 5;
+            if (cnt == 0) {
+                ls = document.getElementById("ls")
+                ls.innerHTML = "최근 구경한 상품"
+                ls.style.background = "green"
+            }
+            cnt++;
+            const img = image.cloneNode(true);
+            ls_image = document.getElementById("ls_image")
+            ls_image.appendChild(img)
+            if (imgSize < cnt) {
+                ls_image.firstElementChild.remove();
+                //ls_image.removeChild( ls_image.childNodes[0] )
+            }
+        }
+    </script>
+    <style type="text/css">
+        img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .list {
+            position: fixed;
+            right: 30px;
+            top: 10px;
+            width: 100px;
+        }
+
+        .list_title {
+            background: red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="list">
+        <h3 class="list_title" id="ls" align="center">
+            목록이<br>없습니다
+        </h3>
+        <div id="ls_image"></div>
+    </div>
+    <div id="image_table"></div>
+</body>
+
+</html>

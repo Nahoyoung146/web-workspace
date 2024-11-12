@@ -1,17 +1,52 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>제목</title>
     <style>
-        p{
+        /* p{
             margin: 10px 20px;
+        }
+
+        div{
+            width: 320px;
+            height: 240px;
+            border: 1px solid black;
+            background-image: url(../resources/images/16.gif);
+            background-repeat: no-repeat;
+            background-position: 100%;
+            background-size: 50% 50%;
+        } */
+
+        body {
+            height: 1000px;
+        }
+
+        .parent {
+            width: 320px;
+            height: 240px;
+            border: 1px solid black;
+            overflow: scroll;
+        }
+
+        .children {
+            height: 2000px;
+            background-image: url(../images/coffee.jpg);
+            background-attachment: scroll;
         }
     </style>
 </head>
+
 <body>
-    <p>lorem1</p>
-    <p>lorem2</p>
+    <!-- <p>lorem1</p>
+    <p>lorem2</p> -->
+    <!-- <div></div> -->
+    <div class="parent">
+        <div class="children"></div>
+    </div>
 </body>
+
 </html>
