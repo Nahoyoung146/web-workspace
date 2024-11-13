@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>제목</title>
+    <title>자습</title>
     <style>
         /* p{
             margin: 10px 20px;
@@ -21,7 +21,7 @@
             background-size: 50% 50%;
         } */
 
-        body {
+        /* body {
             height: 1000px;
         }
 
@@ -37,6 +37,27 @@
             background-image: url(../images/coffee.jpg);
             background-attachment: scroll;
         }
+
+        body {
+            margin: 0;
+        } */
+
+        .box {
+            width: 100px;
+            height: 100px;
+        }
+
+        .red-box {
+            background-color: red;
+            position: relative;
+        }
+
+        .green-box {
+            background-color: green;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
     </style>
 </head>
 
@@ -44,9 +65,11 @@
     <!-- <p>lorem1</p>
     <p>lorem2</p> -->
     <!-- <div></div> -->
-    <div class="parent">
+    <!-- <div class="parent">
         <div class="children"></div>
-    </div>
+    </div> -->
+    <div class="box red-box"></div>
+    <div class="box green-box"></div>
 </body>
 
 </html>

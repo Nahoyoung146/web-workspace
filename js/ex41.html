@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script> //CDN 방식
+        //$(document).ready(function () {
+        // // $().ready(function () {
+        // $(function () {
+        $(() => {
+            $(".hide").click(function () {
+                $("p").hide();
+            })
+            $("#show").click(() => {
+                $("p").show();
+            })
+            $("b").mousedown(() => {
+                $("p").hide();
+            })
+            $("b").mouseup(() => {
+                $("p").show();
+            })
+        }) //ready는  onload랑 비슷한 기능
+    </script>
+</head>
+
+<body>
+    <b>연습중</b>
+    <br>
+    <p>이벤트 처리</p>
+    <button class="hide">숨기기</button>
+    <button id="show">보이기</button>
+</body>
+
+</html>

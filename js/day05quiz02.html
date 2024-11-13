@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const backColor = ["red", "gold", "hotpink", "skyblue"]
+        let index = 0;
+        let bool = true;
+        let e = 0;
+
+        window.onload = () => {
+            document.getElementById("show1").addEventListener("click", btn)
+            document.getElementById("show2").addEventListener("click", btn)
+            document.getElementById("auto").addEventListener("click", btn)
+            document.getElementById("hidd").addEventListener("click", btn)
+        }
+
+        const btn = (event) => {
+            clearTimeout(e)
+            console.log(event.target)
+            switch (event.target.id) {
+                case "show1":
+                    document.getElementById("main").style.background = "gold"
+                    break
+                case "show2":
+                    document.getElementById("main").style.background = "red"
+                    break
+                case "auto":
+                    autobox();
+                    break
+                case "hidd":
+                    document.getElementById("main").style.background = "white"
+                    break
+            }
+        }
+
+        const autobox = () => {
+            if (bool) { //true인 경우 색상 보인다
+                document.getElementById("main").style.background = backColor[index++];
+                if (backColor.length == index)
+                    index = 0;
+            }
+
+            bool = !bool;
+            e = setTimeout(autobox, 1000)
+        }
+    </script>
+</head>
+
+<body>
+    <div style="border: 1px solid; width: 500px; height: 270px; margin: 0 auto;" align="center">
+        <div id="main" style="width: 200px; height: 200px; margin: 0 auto; margin-top: 20px;">
+        </div>
+        <hr>
+        <input type="button" value="버튼1" id="show1">
+        <input type="button" value="버튼2" id="show2">
+        <input type="button" value="자동" id="auto">
+        <input type="button" value="지우기" id="hidd">
+
+    </div>
+</body>
+
+</html>

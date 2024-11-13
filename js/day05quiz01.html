@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const test = (i) => {
+            console.log(i)
+            console.log(i.id)
+            console.log(i.value)
+            switch (i.id) {
+                case "show":
+                    document.getElementById("main").setAttribute("class", "a")
+                    break
+                case "hidd":
+                    document.getElementById("main").removeAttribute("class")
+                    break
+            }
+        }
+    </script>
+    <style>
+        #main {
+            background: white;
+        }
+
+        #main.a {
+            background: gold;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="border: 1px solid; width: 500px; height: 270px; margin: 0 auto;" align="center">
+        <div id="main" style="width: 200px; height: 200px; margin: 0 auto; margin-top: 20px;">
+        </div>
+        <hr>
+        <input type="button" value="버튼1" onclick="test(this)" id="show">
+        <input type="button" value="지우기" onclick="test(this)" id="hidd">
+    </div>
+</body>
+
+</html>

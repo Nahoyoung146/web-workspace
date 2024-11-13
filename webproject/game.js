@@ -49,6 +49,7 @@ function generateRandomValue(min, max) {
     let randomNum = Math.floor(Math.random() * (max - min + 1)) + min
     return randomNum
 }
+
 function Enemy() { //외계인을 만들기 위한 자료
     this.init = function () {
         this.x = generateRandomValue(0, canvas.width - 64)
@@ -61,7 +62,7 @@ function Enemy() { //외계인을 만들기 위한 자료
 
         if (this.y >= canvas.height - 64) {
             gameOver = true
-            console.log(gameOver)
+            // console.log(gameOver)
         }
     }
 }

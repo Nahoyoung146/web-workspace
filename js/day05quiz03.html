@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let list = {
+            images: ["../resources/images/p1.png", "../resources/images/p2.png", "../resources/images/p3.png"],
+            message: ["1. 상품 내용", "2. 상품 내용", "3. 상품 내용"]
+        }
+        onload = () => {
+            for (let i = 0; i < 3; i++) {
+                document.getElementById(i).addEventListener("click", btn)
+            }
+        }
+
+        const btn = (event) => {
+            document.getElementById("modal").style.display = "block"
+            const img = document.createElement("img")
+            img.src = list.images[event.target.id]
+            img.style.width = "100%"
+            img.style.height = "200px"
+            food.appendChild(img)
+
+            const msg = document.createElement("h3")
+            msg.style.textAlign = "center";
+            msg.innerHTML = list.message[event.target.id]
+            food.appendChild(msg)
+
+            const closeBtn = document.createElement("button")
+            closeBtn.innerHTML = "창 닫기"
+            closeBtn.addEventListener("click", closeFunc)
+            food.appendChild(closeBtn)
+        }
+
+        const closeFunc = () => {
+            document.getElementById("modal").style.display = "none";
+            document.getElementById("food").innerHTML = ""; //비우지 않으면 누적된다
+        }
+    </script>
+</head>
+
+<body>
+    <div style="width: 670px; height:400px; margin: 0 auto; border: 5px solid black; position: relative;" id="main2"
+        align="center">
+        <h1>- 상품 목록 -</h1>
+        <img src="../resources/images/p1.png" id="0">
+        <img src="../resources/images/p2.png" id="1">
+        <img src="../resources/images/p3.png" id="2">
+    </div>
+    <div id="modal"
+        style="display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4)">
+        <div id="food" style="position: absolute; top: 100px;
+        left: calc(50% - 200px); width: 400px; height: 500px; border: 1px solid; border: 5px; background: aliceblue;">
+        </div>
+    </div>
+</body>
+
+</html>
