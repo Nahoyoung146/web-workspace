@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 등호(=)가 있어야지 출력 -->
+    views -> for.ejs
+    <%= "안녕" %>
+        <% const name="홍길동" %><br>
+            name : <%= name %>
+                <hr>
+                <ul>
+                    <% for(let i=0 ; i < arr.length ; i++ ){ %>
+                        <li>
+                            <%= i + "." + arr[i] %>
+                        </li>
+                        <% } %>
+                </ul>
+</body>
+
+</html>
