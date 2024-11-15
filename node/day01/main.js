@@ -18,8 +18,4 @@ const app = http.createServer((request, response) => {
 
 app.listen(3000, () => {
     console.log("port start")
-}) //실행, 포트번호 설정
-
-//npm install supervisor --save
-//npx supervisor main
-//npm i express --save
+})

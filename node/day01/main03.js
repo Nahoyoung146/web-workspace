@@ -56,4 +56,8 @@ app.get("/for_quiz", (req, res) => {
     res.render("for_quiz", context)
 })
 
+app.get("/if", (req, res) => {
+    res.render("if", { num: 60 })
+})
+
 app.listen(3000, () => console.log("3000 server"))

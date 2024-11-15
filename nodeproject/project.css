@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    margin: 0 auto;
+    width: 1500px;
+    height: 200px;
+}
+
+main {
+    margin: 0 auto;
+    width: 1500px;
+    height: 900px;
+}
+
+footer {
+    margin: 0 auto;
+    width: 1500px;
+    height: 50px;
+    text-align: center;
+    line-height: 25px;
+}
+
+header>h1 {
+    color: #2db400;
+    width: 60%;
+    height: 50%;
+    font-size: 80px;
+    text-align: center;
+    line-height: 75px;
+    margin: 0 auto;
+}
+
+img {
+    width: 50px;
+    height: 15px;
+}
+
+header>h1>img {
+    width: 10%;
+    height: 50%;
+    transition: 1s;
+
+    &:hover {
+        transform: rotate(360deg);
+    }
+}
+
+nav {
+    width: 60%;
+    height: 50%;
+    margin: 0px auto;
+}
+
+ol {
+    display: flex;
+    margin-top: 10px;
+    list-style: none;
+    height: 50%;
+    background: #2db400;
+    border-radius: 10px;
+
+    &>:nth-child(4) a {
+        border-right: none
+    }
+}
+
+header a {
+    text-decoration: none;
+    border-right: 1px solid white;
+    padding-right: 10px;
+    color: white;
+}
+
+li {
+    margin-top: 10px;
+    width: 25%;
+    text-align: right;
+}
+
+main>div {
+    width: 100%;
+    height: 50%;
+    display: flex;
+}
+
+main>div:nth-of-type(1) {
+    border-bottom: 1px solid black;
+
+    &>:nth-child(1) {
+        width: 40%;
+        height: 100%;
+
+        &>:nth-child(1) {
+            width: 100%;
+            height: 100%;
+            background-image: url(./미니게임천국.jpg);
+            background-size: 25% 25%;
+            opacity: 0.2;
+        }
+
+        &>:nth-child(2) {
+            width: 60%;
+            height: 60%;
+            margin: 0px auto;
+            background: brown;
+            margin-top: -390px;
+            text-align: center;
+
+            &>img {
+                position: relative;
+                width: 100%;
+                height: 100%;
+            }
+
+            &>a {
+                position: relative;
+                font-weight: bold;
+                font-size: 25px;
+                color: black;
+            }
+        }
+    }
+
+    &>:nth-child(2) {
+        width: 40%;
+        height: 100%;
+        text-align: center;
+
+        &>img {
+            width: 40%;
+            height: 40%;
+            margin: 0 auto;
+            margin-top: 40px;
+        }
+
+        &>a {
+            display: inline-block;
+            color: black;
+            font-weight: bold;
+            font-size: 25px;
+            margin-top: 20px;
+        }
+    }
+
+    &>:nth-child(3) {
+        width: 20%;
+        height: 100%;
+        background: yellow;
+    }
+}
+
+main>div:nth-of-type(2) {
+    &>:nth-child(1) {
+        width: 30%;
+        height: 100%;
+        text-align: center;
+
+        &>audio {
+            display: none;
+        }
+
+        &>div {
+            margin: 0 auto;
+            margin-top: 20px;
+            width: 60%;
+            height: 60%;
+            background-image: url(./아파트\ 앨범\ 자켓.png);
+            background-size: 100% 100%;
+        }
+
+        &:hover {
+            &>div {
+                margin-top: -100px;
+                width: 450px;
+                height: 450px;
+                background-image: url(./레코드판.jpg);
+                border-radius: 50%;
+                scale: 0.5;
+                animation: turn 1s infinite;
+            }
+
+            &>audio {
+                margin: 0 auto;
+                display: block;
+                margin-top: -100px;
+            }
+        }
+
+        &>h1 {
+            margin-top: 20px;
+            text-align: center;
+        }
+    }
+
+    &>:nth-child(2) {
+        width: 30%;
+        height: 100%;
+
+        &>h1 {
+            margin-top: 20px;
+            text-align: center;
+        }
+    }
+
+    &>:nth-child(3) {
+        width: 40%;
+        height: 100%;
+        text-align: center;
+
+        &>h1 {
+            margin-top: 20px;
+
+            &~a:nth-of-type(1) {
+                display: inline-block;
+                margin-top: -10px;
+                font-size: 30px;
+                color: black;
+            }
+
+            &~a:nth-of-type(2) {
+                display: inline-block;
+                margin-top: 10px;
+                font-size: 30px;
+                color: black;
+            }
+
+            &~fieldset {
+                width: 95%;
+                height: 30%;
+                margin: 0 auto;
+                line-height: 25px;
+
+                &>div {
+                    border: none;
+                    display: inline-block;
+                    width: 55%;
+                    margin-left: 30px;
+                }
+            }
+        }
+    }
+}
+
+@keyframes turn {
+    100% {
+        transform: rotate(360deg)
+    }
+}
