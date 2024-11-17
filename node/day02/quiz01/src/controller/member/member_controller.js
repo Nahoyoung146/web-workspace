@@ -1,11 +1,8 @@
-const { query } = require("express")
 const service = require("../../service/member/member_service")
-
-
 const logincheck = (req, res) => {
-    const mem = service.info(req.param("id"))
-    if(mem.length!=0)
-        res.redirect("/list")
+    const mem = service.info(req.param("id"), req.param("name"))
+    if (mem.length != 0)
+        res.redirect("/member/list")
 
     else
         res.redirect("/member/login")
@@ -15,11 +12,15 @@ const login = (req, res) => {
     res.render("member/login")
 }
 
-const loginsu = (req,res) => {
-    console.log("req.param(id) => ",req.param("id"))
-    const mem = service.info(req.param("id"))
-    console.log(mem)
-    res.render("member/list", mem)
+const loginsu = (req, res) => {
+    const list = service.list
+    res.render("member/list", { mem : list })
 }
 
-module.exports = { login, logincheck, loginsu}
+const show = (req, res) => {
+    const list = service.show(req.param("id"))
+    console.log(list)
+    res.render("member/info", { mem : list })
+}
+
+module.exports = { login, logincheck, loginsu, show }

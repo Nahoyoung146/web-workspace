@@ -8,25 +8,27 @@
 </head>
 
 <body>
-    <table border="1" align="text">
+    <table border="1" align="center">
         <tr>
             <th>아이디</th>
             <th>이름</th>
             <th>주소</th>
         </tr>
-        <% for(let i=0 ; i < mem.length ; i++){ %>
+        <% mem.forEach( data=> { %>
             <tr>
                 <td>
-                    <%= mem[i].id %>
+                    <%= data.id %>
                 </td>
                 <td>
-                    <%= mem[i].name %>
+                    <a href="/member/info?id=<%= data.id %>">
+                        <%= data.name %>
+                    </a>
                 </td>
                 <td>
-                    <%= mem[i].addr %>
+                    <%= data.addr %>
                 </td>
             </tr>
-            <% } %>
+            <% }) %>  
     </table>
 </body>
 
