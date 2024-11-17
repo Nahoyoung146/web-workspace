@@ -6,4 +6,5 @@ router.get("/test", ctrl.test)
 router.get("/info", ctrl.info)
 router.get("/test1", ctrl.test)
 router.get("/test2", ctrl.test2)
+
 module.exports = router

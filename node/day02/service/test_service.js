@@ -9,4 +9,5 @@ const info = (id) => {
     console.log("mem => ", mem)
     return mem
 }
+
 module.exports = { index, info }

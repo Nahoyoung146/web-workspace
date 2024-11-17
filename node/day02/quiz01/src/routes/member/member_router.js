@@ -5,4 +5,5 @@ router.get("/login", memctrl.login)
 router.get("/logincheck", memctrl.logincheck)
 router.get("/list", memctrl.loginsu)
 router.get("/info", memctrl.show)
+
 module.exports = router
