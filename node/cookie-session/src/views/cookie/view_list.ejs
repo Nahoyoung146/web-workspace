@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body align="center">
+    <h3>상품 목록</h3>
+    <% console.log( "실행" ) %>
+    <% console.log( list ) %><br>
+        <table border="1" align="center">
+            <tr>
+                <th>goods_id</th>
+                <th>title</th>
+                <th>price</th>
+                <th>number</th>
+                <th>total</th>
+            </tr>
+            <% for (let i=0 ; i < list.length ; i++ ) { %>
+                <tr>
+                    <td>
+                        <%= list[i].goods_id %>
+                    </td>
+                    <td>
+                        <%= list[i].title %>
+                    </td>
+                    <td>
+                        <%= list[i].price %>
+                    </td>
+                    <td>
+                        <%= list[i].number %>
+                    </td>
+                    <td>
+                        <%= list[i].total %>
+                    </td>
+                </tr>
+                <% } %>
+        </table>
+        <a href="/cookie/cart">목록 이동</a>
+</body>
+
+</html>

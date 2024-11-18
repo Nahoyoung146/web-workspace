@@ -7,62 +7,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>자습</title>
     <style>
-        /* p{
-            margin: 10px 20px;
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+        .poppins {
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
         }
 
-        div{
-            width: 320px;
-            height: 240px;
-            border: 1px solid black;
-            background-image: url(../resources/images/16.gif);
-            background-repeat: no-repeat;
-            background-position: 100%;
-            background-size: 50% 50%;
-        } */
+        .varela {
+            font-family: "Varela", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        /* p{
+    margin: 10px 20px;
+    }
+
+    div{
+    width: 320px;
+    height: 240px;
+    border: 1px solid black;
+    background-image: url(../resources/images/16.gif);
+    background-repeat: no-repeat;
+    background-position: 100%;
+    background-size: 50% 50%;
+    } */
 
         /* body {
-            height: 1000px;
-        }
+    height: 1000px;
+    }
 
-        .parent {
-            width: 320px;
-            height: 240px;
-            border: 1px solid black;
-            overflow: scroll;
-        }
+    .parent {
+    width: 320px;
+    height: 240px;
+    border: 1px solid black;
+    overflow: scroll;
+    }
 
-        .children {
-            height: 2000px;
-            background-image: url(../images/coffee.jpg);
-            background-attachment: scroll;
-        }
+    .children {
+    height: 2000px;
+    background-image: url(../images/coffee.jpg);
+    background-attachment: scroll;
+    }
 
-        body {
-            margin: 0;
-        } */
+    body {
+    margin: 0;
+    } */
 
         /* .box {
-            width: 100px;
-            height: 100px;
-        }
+    width: 100px;
+    height: 100px;
+    }
 
-        .red-box {
-            background-color: red;
-            position: relative;
-        }
+    .red-box {
+    background-color: red;
+    position: relative;
+    }
 
-        .green-box {
-            background-color: green;
-            position: absolute;
-            left: 0;
-            top: 0;
-        } */
+    .green-box {
+    background-color: green;
+    position: absolute;
+    left: 0;
+    top: 0;
+    } */
 
         /* img {
-            float: right;
-            margin-right: 1rem;
-        } */
+    float: right;
+    margin-right: 1rem;
+    } */
 
         div {
             color: white;
@@ -141,6 +155,23 @@
         .bar:nth-child(5) {
             transition-timing-function: ease-in-out;
         }
+
+        .container {
+            border: 1px solid black;
+            display: inline-block;
+            margin: 20px;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background: red;
+
+            &:hover {
+                transform: rotate(30deg);
+                transform-origin: top left;
+            }
+        }
     </style>
 </head>
 
@@ -166,13 +197,18 @@
     <!-- <div class="box red-box"></div>
     <div class="box green-box"></div>
     <div class="box blue-box"></div> -->
-    <div class="container">
+    <!-- <div class="container">
         <div class="bar">linear</div>
         <div class="bar">ease</div>
         <div class="bar">ease-in</div>
         <div class="bar">ease-out</div>
         <div class="bar">ease-in-out</div>
+    </div> -->
+    <div class="container">
+        <div class="box"></div>
     </div>
+    <p class="poppins">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+    <p class="varela">Lorem, ipsum, dolor, sit amet consectetur adipisicing elit.</p>
 </body>
 
 </html>
