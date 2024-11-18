@@ -51,7 +51,7 @@ const viewList = (req, res) => {
         res.send(msg)
         return;
     }
-    res.render("cookie/view_list", {list : ser.view_list (cart_list)})
+    res.render("cookie/view_list", { list: ser.view_list(cart_list) })
 }
 
 module.exports = { index, popup, makeCookie, cart, save, viewList }
