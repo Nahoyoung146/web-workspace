@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    views => login.ejs<br>
+    session : <%= username %>
+    <% if( !username ) { %>
+        <form method="post" action="/session/login_check">
+            <input type="text" name="id"><br>
+            <input type="text" name="pwd"><br>
+            <input type="submit" value="로그인"><br>
+        </form>
+    <% }else{ %>
+        <b><%= username %> </b>님 환영합니다!!!<br>
+        <a href="/session/logout">로그아웃</a>
+        <a href="/session/main">main</a>
+    <% } %>
+    
+</body>
+
+</html>

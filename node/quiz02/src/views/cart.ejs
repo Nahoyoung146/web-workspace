@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>상품목록</li>
+        <% for(let i=0 ; i < list.length ; i++){ %>
+            <li>
+                <a href="#">
+                    <%= list[i].title %></a>
+                        : <%= list[i].price %>원
+            </li>
+            <% } %>
+    </ul>
+    <a href="#">저장 목록 확인</a>
+    <a href="/session/main">로그인 성공페이지 이동</a>
+</body>
+
+</html>
