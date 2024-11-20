@@ -1,8 +1,3 @@
-const oracledb = require("oracledb")
-const dbConfig = require("../../../config/database/db_config")
-oracledb.autoCommit = true
-oracledb.outFormat = oracledb.OBJECT
-
 const ser = require("../../service/member/member_service")
 // const list = async () => {} 이게 어려우면
 async function list(req, res) {
