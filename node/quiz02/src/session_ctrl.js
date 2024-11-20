@@ -27,7 +27,6 @@ const delSession = (req, res) => {
 }
 
 const loginForm = (req, res) => {
-    console.log(211)
     res.render("login", { username: req.session.username })
 }
 
