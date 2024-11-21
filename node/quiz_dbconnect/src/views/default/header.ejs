@@ -8,19 +8,14 @@
 </head>
 
 <body align="center">
-    <% if ( username===undefined ) { %>
-        <a href="/">HOME</a>
-        <a href="/member/login_form">로그인</a><br>
-        <hr>
-
-        <% } else if ( !username ) { %>
-            <a href="/">HOME</a>
-            <a href="/member/login_form">로그인</a><br>
-            <hr>
-
-            <% } else { %>
-                <a href="/">HOME</a>
-                <a href="/member/logout">로그아웃</a><br>
+    <a href="/">HOME</a>
+    <% if( username ) { %>
+        <a href="/member/logout">로그아웃</a>
+        <a href="/member/list">회원정보</a>
+        <% } else { %>
+            <a href="/member/login">로그인</a>
+            <a href="/member/login">회원정보</a>
+            <% } %>
                 <hr>
 </body>
 
