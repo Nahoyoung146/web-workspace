@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <%- include("../test") %>
     <form action="/member/modify" method="post">
         <input type="text" readonly name="id" value="<%= member.ID %>"><br>
         <input type="text" name="pwd" value="<%= member.PWD %>"><br>

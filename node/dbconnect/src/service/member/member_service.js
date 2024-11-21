@@ -1,12 +1,21 @@
-dao = require("../../database/member/member_dao")
-
+const dao = require("../../database/member/member_dao")
+const bcrypt = require("bcrypt")
 const getList = async () => {
+    const pwd = "test"
+    const changePwd = bcrypt.hashSync(pwd, 10) // 숫자가 높을수록 암호화가 더 자세히 된다.
+    console.log("============================")
+    console.log("pwd : ", pwd)
+    console.log("changePwd : ", changePwd)
+    console.log("changePwd : ", bcrypt.compareSync(pwd, changePwd)) //일반평문과 암호화된 문자를 비교
     const result = await dao.getList()
     console.log("ser result : ", result)
     return result.rows
 }
 
 const register = async (body) => {
+    console.log("body : ", body)
+    body.pwd = bcrypt.hashSync(body.pwd,10)
+    console.log("ser body : ",body)
     const result = await dao.register(body)
     console.log("ser result : ", result)
     let msg = " ", url = " "

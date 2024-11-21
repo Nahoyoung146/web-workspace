@@ -4,7 +4,6 @@ const index = (req, res) => {
     res.render("set_session");
 }
 
-
 const getSession = (req, res) => {
     console.log(req.session.name)
     const sessionValue = {

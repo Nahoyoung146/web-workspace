@@ -12,7 +12,7 @@ const regForm = (req, res) => {
 }
 
 const register = async (req, res) => {
-    console.log(req.body)
+    console.log("req body : " , req.body)
     let msg = await ser.register(req.body)
     console.log("msg : ", msg)
     res.send(msg)

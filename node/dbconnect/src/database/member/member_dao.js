@@ -11,6 +11,7 @@ const getList = async () => {
 }
 
 const register = async (body) => {
+    console.log("body : ", body)
     const sql = "insert into members(id, pwd, name, addr) values(:id, :pwd, :name, :addr)"
     let con = await oracledb.getConnection(dbConfig);
     let result = 0;
@@ -53,13 +54,10 @@ const modify = async (body) => {
     console.log("------------------------->", body.pwd)
     const sql = `update members set pwd='${body.pwd}', 
     addr='${body.addr}', name='${body.name}' where id='${body.id}'`
-    //const member = getMember(id)
-    //let addr = ""
-    // if(body.addr != member.addr) {
-    //     addr = "addr=" + body.addr}
-    // }
-    // sql += addr
-    // `update members set addr = 변경주소`
+    //const member = getMember( id );
+    //let addr = "";
+    //if(body.addr != member.addr ){ addr="addr="+body.addr }
+    //sql += addr; //`update members set addr=변경주소`
     let result = 0
     try {
         let con = await oracledb.getConnection(dbConfig)

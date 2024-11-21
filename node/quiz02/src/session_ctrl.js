@@ -54,10 +54,6 @@ const loginCheck = (req, res) => {
         if (i == users.length - 1) {
             msg += `alert("존재하지 않는 id");`
         }
-
-        else {
-            continue
-        }
     }
 
     msg += `location.href="/session/login"; </script>`
