@@ -6,23 +6,22 @@ const logincheck = async (body) => {
     console.log(body)
     let pack = {}, msg = "", url = ""
     if (result.rows.length == 1) {
-        result = result.rows[0]
-        if (result.PWD === body.pwd) {
-            msg = `${result.NAME}님 환영합니다^^`
+        if (result.rows[0].PWD === body.pwd) {
+            msg = `${result.rows[0].NAME}님 환영합니다^^`
             url = "/"
             pack.result = 0
         }
 
         else {
             msg = "비밀번호가 틀렸습니다!!!"
-            url = "/member/login_form"
+            url = "/member/login"
             pack.result = 1
         }
     }
 
     else {
         msg = "존재하지 않는 아이디입니다!!"
-        url = "/member/login_form"
+        url = "/member/login"
         pack.result = 1
     }
     pack.msg = getMessage(msg, url)
@@ -48,7 +47,10 @@ const register = async (body) => {
 }
 
 const getMessage = (msg, url) => {
-    return `<script>alert("${msg}");location.href="${url}";</script>`
+    return `<script>
+                alert("${msg}")
+                location.href="${url}"
+    </script>`
 }
 
 const getMember = async (id) => {

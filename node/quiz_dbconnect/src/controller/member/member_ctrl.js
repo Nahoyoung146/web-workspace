@@ -22,7 +22,6 @@ const list = async (req, res) => {
     res.render("member/list", { list, username: req.session.username })
 }
 
-
 const registerform = (req, res) => {
     res.render("member/registerform", { username: req.session.username })
 }
@@ -61,6 +60,7 @@ const modify = async (req, res) => {
 
 const deletem = async (req, res) => {
     let msg = await ser.deletem(req.params)
+    req.session.destroy();
     res.send(msg)
 }
 
