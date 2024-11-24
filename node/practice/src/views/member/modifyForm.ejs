@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body align="center">
+    <form action="/member/modify" method="post">
+        <input type="text" name="id" readonly value="<%= member.ID %>"><br>
+        <input type="password" name="pwd" value="<%= member.PWD %>"><br>
+        <input type="text" name="name" value="<%= member.NAME %>"><br>
+        <input type="text" name="addr" value="<%= member.ADDR %>"><br>
+        <button type="submit">register</button>
+    </form>
+</body>
+
+</html>

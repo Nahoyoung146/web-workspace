@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body align="center">
+    <a href="/">HOME</a>
+    <% if( username ) { %>
+        <a href="/member/logout">로그아웃</a>
+        <a href="/member/list">회원정보</a>
+        <% } else { %>
+            <a href="/member/loginForm">로그인</a>
+            <a href="/member/loginForm">회원정보</a>
+            <% } %>
+                <hr>
+</body>
+
+</html>

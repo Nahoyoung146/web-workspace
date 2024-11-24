@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body align="center">
+    <%- include("../default/header") %>
+        <table align="center" border="1">
+            <tr>
+                <th>아이디</th>
+                <th>비밀번호</th>
+                <th>이름</th>
+                <th>주소</th>
+            </tr>
+            <% list.forEach( data=> { %>
+                <tr>
+                    <td>
+                        <%= data.ID %>
+                    </td>
+                    <td>
+                        <%= data.PWD %>
+                    </td>
+                    <td>
+                        <a href="/member/info/<%= data.ID %>">
+                            <%= data.NAME %>
+                        </a>
+                    </td>
+                    <td>
+                        <%= data.ADDR %>
+                    </td>
+                </tr>
+                <% }) %>
+        </table>
+</body>
+
+</html>

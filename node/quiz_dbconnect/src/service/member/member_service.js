@@ -29,7 +29,7 @@ const logincheck = async (body) => {
 }
 
 const getList = async () => {
-    list = await dao.getList()
+    let list = await dao.getList()
     return list
 }
 
