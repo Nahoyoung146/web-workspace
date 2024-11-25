@@ -8,6 +8,25 @@
     <link href="project.css" rel="stylesheet" type="text/css">
     </link>
     <link href="./네이버 모자 변형.png" rel="icon">
+    <script>
+        let flag = true
+        function btn() {
+            console.log(flag)
+            if (flag) {
+                document.getElementById("main").innerHTML = "&#8618; 이 명작이 폭등할 거라고 확신해요"
+                document.getElementById("btn").innerHTML = "원래대로"
+            }
+
+            else {
+                document.getElementById("main").innerHTML = "&#8618; I'm sure this masterpiece will skyrocket"
+                document.getElementById("btn").innerHTML = "번역"
+            }
+
+            flag = !flag
+            console.log(flag)
+        }
+
+    </script>
     <style>
         * {
             margin: 0;
@@ -295,7 +314,7 @@
             </section>
             <section>
                 <img src="비행기.png" alt="비행기"><br>
-                <a href="game.html" title="갤러그 이동" target="_blank">갤러그</a><br><br>
+                <a href="/game" title="갤러그 이동" target="_blank">갤러그</a><br><br>
                 1. 방향키로 움직이고 스페이스바를 눌러 총알을 발사하세요.<br>
                 2. 적은 무작위 위치에서 아래로 일정한 속도로 떨어집니다.<br>
                 3. 적을 죽이면 점수가 1점씩 올라가고 적이 맨 아래까지 도달하면 게임오버입니다.

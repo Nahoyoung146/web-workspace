@@ -21,6 +21,35 @@
             const reg_view = document.getElementById("regView")
             reg_view.addEventListener("click", regView)
         }
+        const getMember = async () => {
+            const res = await fetch("/members", { method: "get" })
+            const list = await res.json()
+            let msg = `<table border="1" align="center">
+        <tr>
+            <th>아이디</th>
+            <th>이름</th>
+            <th>주소</th>
+        </tr>`
+            list.forEach(member => {
+                msg += `<tr>`
+                msg += `<td>${member.id}</td>`
+                msg += `<td onclick="info('${member.id}')" style="cursor:pointer">${member.name}</td>`
+                msg += `<td>${member.addr}</td>`
+                msg += `</tr>`
+            })
+            msg += `</table>`
+            content.innerHTML = msg
+        }
+        const regView = () => {
+            let msg = `<form id="form">
+        <input type="text" name="id" placeholder="id"><br>
+        <input type="text" name="pwd" placeholder="pwd"><br>
+        <input type="text" name="name" placeholder="name"><br>
+        <input type="text" name="addr" placeholder="addr"><br>
+        <input type="button" onclick="register()" value="가입"><br>
+    </form>`
+            content.innerHTML = msg
+        }
         const register = () => {
             const arr = $("#form").serializeArray();
             console.log("arr : ", arr)
@@ -47,35 +76,6 @@
                         alert("문제 발생!!!")
                     }
                 })
-        }
-        const regView = () => {
-            let msg = `<form id="form">
-        <input type="text" name="id" placeholder="id"><br>
-        <input type="text" name="pwd" placeholder="pwd"><br>
-        <input type="text" name="name" placeholder="name"><br>
-        <input type="text" name="addr" placeholder="addr"><br>
-        <input type="button" onclick="register()" value="가입"><br>
-    </form>`
-            content.innerHTML = msg
-        }
-        const getMember = async () => {
-            const res = await fetch("/members", { method: "get" })
-            const list = await res.json()
-            let msg = `<table border="1" align="center">
-        <tr>
-            <th>아이디</th>
-            <th>이름</th>
-            <th>주소</th>
-        </tr>`
-            list.forEach(member => {
-                msg += `<tr>`
-                msg += `<td>${member.id}</td>`
-                msg += `<td onclick="info('${member.id}')" style="cursor:pointer">${member.name}</td>`
-                msg += `<td>${member.addr}</td>`
-                msg += `</tr>`
-            })
-            msg += `</table>`
-            content.innerHTML = msg
         }
         const info = async (uId) => {
             console.log("uId : ", uId)

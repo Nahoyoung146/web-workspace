@@ -21,7 +21,7 @@
             for (let i = a; i < a + 3; i++) {
                 msg += `${list[i].id}, ${list[i].name}, ${list[i].addr}<br>`
             }
-            document.getElementById("div")
+            document.getElementById("div").insertAdjacentHTML("beforeend", msg)
             a += 3
         }
     </script>
