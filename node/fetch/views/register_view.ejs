@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script>
+        const getMember = async () => {
+            const res = await fetch("/members", { method: "get" })
+            const list = await res.json()
+            let msg = `<table border="1" align="center">
+        <tr>
+            <th>아이디</th>
+            <th>이름</th>
+            <th>주소</th>
+        </tr>`
+            list.forEach(member => {
+                msg += `<tr>`
+                msg += `<td>${member.id}</td>`
+                msg += `<td onclick="info('${member.id}')" style="cursor:pointer">${member.name}</td>`
+                msg += `<td>${member.addr}</td>`
+                msg += `</tr>`
+            })
+            msg += `</table>`
+            document.getElementById("main").innerHTML = msg
+            return list
+        }
+
+        const input = async () => {
+            list = await getMember()
+            console.log(list)
+            if (document.getElementById("txt1").value.length < 3) {
+                document.getElementById("div").innerHTML = "길이가 짫습니다. (3자 이상)"
+            }
+
+            else {
+                for (let i = 0; i < list.length; i++) {
+                    if (document.getElementById("txt1").value == list[i].id) {
+                        document.getElementById("div").innerHTML = "존재하는 id입니다."
+                        break;
+                    }
+
+                    if (i == list.length - 1) {
+                        document.getElementById("div").innerHTML = "가입가능한 ID입니다."
+                    }
+                }
+            }
+        }
+
+        const register = () => {
+            const arr = $('#form').serializeArray()
+            console.log("arr : ", arr)
+            let data = {}
+            arr.forEach(d => {
+                data[d.name] = d.value
+            })
+            console.log("data : ", data)
+            list = list.concat(data)
+            fetch("/members", {
+                method: "post",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data)
+            })
+                .then(res => res.json())
+                .then(result => {
+                    console.log("result : ", result)
+                    if (result == 1) {
+                        alert("가입 축하!!!")
+                        getMember()
+                    } else {
+                        alert("문제 발생!!!")
+                    }
+                })
+        }
+    </script>
+</head>
+
+<body align="center">
+    <form id="form">
+        <input id="txt1" type="text" name="id" placeholder="input id" oninput="input()">
+        <div id="div" style="display: inline-block;">id 확인</div><br>
+        <input type="password" name="pwd" placeholder="input password"><br>
+        <input type="text" name="name" placeholder="input name"><br>
+        <input type="text" name="addr" placeholder="input addr"><br>
+        <button type="button" onclick="register()">register</button>
+    </form>
+    <div id="main"></div>
+</body>
+
+</html>

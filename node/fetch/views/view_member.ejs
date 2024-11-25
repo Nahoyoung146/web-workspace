@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let a = 0
+        const getMember = async () => {
+            const res = await fetch("/members", { method: "get" })
+            const list = await res.json()
+            return list
+        }
+
+        const viewmember = async () => {
+            list = await getMember()
+            console.log("list : ", list)
+            console.log(a)
+            let msg = ""
+            for (let i = a; i < a + 3; i++) {
+                msg += `${list[i].id}, ${list[i].name}, ${list[i].addr}<br>`
+            }
+            document.getElementById("div")
+            a += 3
+        }
+    </script>
+</head>
+
+<body align="center">
+    <div id="div"></div>
+    <hr>
+    <button type="button" onclick="viewmember()">3명씩 더 보기</button>
+</body>
+
+</html>
