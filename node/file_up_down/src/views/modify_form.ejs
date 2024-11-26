@@ -9,7 +9,6 @@
 </head>
 
 <body>
-    <script>console.log(`이름 : <%= fileName %>`)</script>
     <form action="/file/modify" method="post" enctype="multipart/form-data">
         <input type="hidden" name="originFileName" value="<%= fileName %>">
         <img src="/file/download/<%= fileName %>" width="100" height="100" id="preview"><br>

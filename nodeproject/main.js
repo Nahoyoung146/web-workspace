@@ -1,24 +1,14 @@
 const express = require("express")
 const app = express()
 
-app.set("views", "./views")
+const bodyParser = require("body-parser")
+app.use(bodyParser.urlencoded())
+const router = require("./src/router/router")(app)
+
+app.set("views", "./src/views")
 app.set("view engine", "ejs")
+app.use("/", router)
 
-const main = (req, res) => {
-    res.render("project")
-}
+app.use("/static", express.static(__dirname))
 
-const game = (req, res) => {
-    res.render("game")
-}
-
-const outline = (req, res) => {
-    res.render("outline")
-}
-app.get("/", main)
-app.get("/game", game)
-app.get("/outline", outline)
-
-app.listen(5000, () => {
-    console.log("port start")
-})
+app.listen(3000, () => console.log("3000 서버 실행"))
