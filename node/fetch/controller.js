@@ -10,9 +10,11 @@ const members = (req, res) => {
     res.json(list)
 }
 const reg = (req, res) => {
-    console.log(req.body)
-    list = list.concat(req.body)
-    res.json(1)
+    const result = list.filter(mem => mem.id === req.body.id)
+    if(result.length==0){
+         list = list.concat(req.body)
+    }
+    res.json(result.length)
 }
 const member = (req, res) => {
     //select * f mem wh id=req.params.id
