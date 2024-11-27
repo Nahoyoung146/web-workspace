@@ -1,6 +1,5 @@
 const express = require("express")
 const app = express()
-
 const bodyParser = require("body-parser")
 app.use(bodyParser.urlencoded())
 const router = require("./src/router/router")(app)
@@ -11,4 +10,4 @@ app.use("/", router)
 
 app.use("/static", express.static(__dirname))
 
-app.listen(3000, () => console.log("3000 서버 실행"))
+app.listen(4000, () => console.log("4000 서버 실행"))
