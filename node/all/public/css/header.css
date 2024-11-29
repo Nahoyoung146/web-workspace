@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#nav {
+    background: #2db400;
+    width: 800px;
+    height: 40px;
+    margin: 0 auto;
+    line-height: 40px;
+}
+
+#nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+}
+
+#nav ul li {
+    &:nth-child(1) {
+        margin-left: 400px;
+    }
+
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(4) {
+        margin-left: 40px;
+    }
+}
+
+#nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}

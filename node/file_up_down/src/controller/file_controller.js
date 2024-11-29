@@ -11,6 +11,7 @@ const views = {
         // })
         // 동기 방식 (Sync 붙어 있으면 거의 다 동기 방식)
         const fileList = fs.readdirSync("./upload_file") //프로젝트가 기준
+        console.log("fileList : ", fileList)
         res.render("file_list", { files: fileList })
     },
     download: (req, res) => {
