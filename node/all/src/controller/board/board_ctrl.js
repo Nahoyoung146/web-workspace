@@ -1,6 +1,5 @@
 const ser = require("../../service/board/board_service")
 const fs = require("fs")
-const { modify } = require("../member/member_ctrl")
 const views = {
     list: async (req, res) => {
         console.log("start : ", req.query.start)
@@ -37,7 +36,7 @@ const views = {
     },
     modifyForm: async (req, res) => {
         const data = await ser.pageRead.modifyForm(req.params.fileName)
-        console.log("ctl_data : ", data )
+        console.log("ctl_data : ", data)
         res.render("board/modifyForm", { data })
     }
 }
@@ -78,11 +77,17 @@ const process = {
         res.redirect("/board/list")
     },
     modify: async (req, res) => {
-        const result = await ser.pageInsert.modify(req.body)
-        if (req.file) {
-            return res.redirect("/board/del/" + req.body.originFileName)
-        }
-        res.redirect("/board/list")
+        console.log("ctl.req.file : ", req.file)
+        console.log("ctl.req.body : ", req.body)
+        body = {}
+        body.title = req.body.title
+        body.content = req.body.content
+        body.originFileName = req.body.originFileName
+        body.changeName = req.file.filename
+        body.originName = req.file.originalname
+        const result = await ser.pageInsert.modify(body)
+        fs.unlinkSync(`./upload_file/${req.body.originFileName}`)
+        res.redirect(`/board/list`)
     }
 }
 

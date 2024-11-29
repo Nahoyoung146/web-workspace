@@ -75,9 +75,10 @@ const daoInsert = {
         }
     },
     modify: async (body) => {
-        console.log(body)
+        console.log("dao.body : ", body)
         const con = await oracledb.getConnection(dbConfig)
-        const sql = `update board set TITLE='${body.title}', CONTENT= '${body.content}' where change_file_name='${body.originFileName}'`
+        const sql = `update board set TITLE='${body.title}', CONTENT= '${body.content}', SAVE_DATE=sysdate, ORIGIN_FILE_NAME='${body.originName}',
+        CHANGE_FILE_NAME='${body.changeName}' where change_file_name='${body.originFileName}'`
         let result = 0
         try {
             result = await con.execute(sql)

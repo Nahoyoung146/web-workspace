@@ -22,6 +22,7 @@ const views = {
 
 const process = {
     write: async (req, res) => {
+        console.log(req.body)
         const msg = await ser.pageInsert.write(req.body)
         //res.send(msg)
         res.redirect("/page/list")
