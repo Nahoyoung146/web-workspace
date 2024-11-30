@@ -10,24 +10,24 @@
 
 <body align="center" style="text-align: left;">
    <form action="/board/write" method="post" enctype="multipart/form-data">
-   <h1 style="text-align: center;">글쓰기</h1><br>
-   <h3 style="display: inline-block; margin-bottom: 0px;">작성자</h3><br>
-   <input style="width: 500px;" type="text" name="id" readonly value=<%=username %>><br>
-   <hr>
-   <h3 style="display: inline-block; margin-bottom: 0px; margin-top: 0px;">제목</h3><br>
-   <input style="width: 800px;" type="text" name="title"><br>
-   <hr>
-   <h3 style="display: inline-block; margin-top: 0px; margin-bottom: 0px;">내용</h3><br>
-   <textarea cols="150" rows="30" name="content"></textarea><br>
-   <hr>
-   <h3>이미지파일 첨부</h3><br>
-   <input type="file" name="file_name" onchange="readURL(this)">
-   <img
-      style="border: 1px solid black; display: inline-block; width: 100px; height: 100px; margin-left: 700px; margin-top: -70px; position: absolute;"
-      id="preview" src="#" alt="선택된 이미지가 없습니다."><br>
-   <hr>
-   <button type="submit">글쓰기</button>
-   <button onclick="location.href='/board/list'">목록보기</button>
+      <h1 style="text-align: center;">글쓰기</h1><br>
+      <h3 style="display: inline-block; margin-bottom: 0px;">작성자</h3><br>
+      <input style="width: 500px;" type="text" name="id" readonly value=<%=username %>><br>
+      <hr>
+      <h3 style="display: inline-block; margin-bottom: 0px; margin-top: 0px;">제목</h3><br>
+      <input style="width: 800px;" type="text" name="title"><br>
+      <hr>
+      <h3 style="display: inline-block; margin-top: 0px; margin-bottom: 0px;">내용</h3><br>
+      <textarea cols="150" rows="30" name="content"></textarea><br>
+      <hr>
+      <h3>이미지파일 첨부</h3><br>
+      <input type="file" name="file_name" onchange="readURL(this)">
+      <img
+         style="border: 1px solid black; display: inline-block; width: 100px; height: 100px; margin-left: 700px; margin-top: -70px; position: absolute;"
+         id="preview" src="#" alt="선택된 이미지가 없습니다."><br>
+      <hr>
+      <button type="submit">글쓰기</button>
+      <button onclick="location.href='/board/list'">목록보기</button>
    </form>
 </body>
 

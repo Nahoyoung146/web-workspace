@@ -10,12 +10,10 @@ const views = {
     writeForm: (req, res) => {
         console.log("req.session.name : ", req.session.username)
         console.log("ser : ", ser.pageRead.writeForm(req.session.username))
-        let msg = ser.pageRead.writeForm(req.session.username).msg
-        let result = ser.pageRead.writeForm(req.session.username).result
+        let msg = ser.pageRead.writeForm(req.session.username).msg, result = ser.pageRead.writeForm(req.session.username).result
         console.log("msg : ", msg)
         console.log("result : ", result)
         if (result == 1) {
-            console.log("실행")
             res.send(msg)
         }
 

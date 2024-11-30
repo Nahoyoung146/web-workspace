@@ -1,5 +1,4 @@
 const dao = require("../../database/board/board_dao")
-const { modify } = require("../member/member_service")
 const pageRead = {
     list: async (start) => {
         if (!start)
@@ -13,8 +12,9 @@ const pageRead = {
         const result = (num % 4 == 0) ? 0 : 1
         const page = parseInt(num / 4 + result)
         startNum = (start - 1) * 4
-        const list = await dao.daoRead.list(startNum)
-        return { list: list.rows, page, start }
+        let list = await dao.daoRead.list(startNum)
+        list = pageRead.timeModify(list.rows)
+        return { list, page, start }
     },
     writeForm: (body) => {
         console.log("body : ", body)
@@ -28,24 +28,33 @@ const pageRead = {
         return { msg, result }
     },
     content: async (num) => {
-        const data = await dao.daoRead.content(num)
-        return data.rows[0]
+        let data = await dao.daoRead.content(num)
+        data = pageRead.timeModify(data.rows)
+        console.log("ser_data : ", data)
+        return data[0]
     },
-    modifyForm : async (body) => {
+    modifyForm: async (body) => {
         const data = await dao.daoRead.modifyForm(body)
         console.log("ser_data : ", data)
         return data.rows[0]
+    },
+    timeModify: (list) => {
+        console.log("time : ", list)
+        list = list.map(data => {
+            data['SAVE_DATE'] = data['SAVE_DATE'].toLocaleString()
+            return data
+        })
+        return list
     }
 }
-
 const pageInsert = {
     write: async (body) => {
         const result = await dao.daoInsert.write(body)
     },
-    del : async (body) => {
+    del: async (body) => {
         const result = await dao.daoInsert.del(body)
     },
-    modify : async (body) => {
+    modify: async (body) => {
         const result = await dao.daoInsert.modify(body)
     }
 }
