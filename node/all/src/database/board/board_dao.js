@@ -44,7 +44,7 @@ const daoUpate = {
 const daoInsert = {
     write: async (body) => {
         console.log("body : ", body)
-        const sql = `insert into board(WRITE_NO, TITLE, CONTENT, SAVE_DATE, ORIGIN_FILE_NAME, CHANGE_FILE_NAME, ID) values(board_seq.nextval, :title, :content, sysdate, :originalname, :filename, :id)`
+        const sql = `insert into board(WRITE_NO, TITLE, CONTENT, ORIGIN_FILE_NAME, CHANGE_FILE_NAME, ID) values(board_seq.nextval, :title, :content, :originalname, :filename, :id)`
         let result = 0
         try {
             result = (await con).execute(sql, body)
