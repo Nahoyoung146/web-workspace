@@ -15,6 +15,65 @@
         console.log(string2)
         let string = "이스케이프 문자를 이용해서\n줄 바꿈하고 싶어요."
         console.log(string)
+        string = `문자열은 큰따옴표(")나 작은따옴표(')로 감싸면 됩니다.`
+        console.log(string)
+        string = `문자열은 큰따옴표(")나 
+작은따옴표(')로 감싸면 됩니다.`
+        console.log(string)
+        let dan = 3
+        let gugu = 8
+        string = `${dan} 곱하기 ${gugu}은(는) ${dan * gugu}입니다.`
+        console.log(string)
+        let empty
+        console.log(empty)
+        let koreanScore = 90
+        let englishScore = 80
+        let mathScore = 70
+        let scienceScore = 60
+        let studentScore = [koreanScore, englishScore, mathScore, scienceScore]
+        for (let i = 0; i < studentScore.length; i++) {
+            console.log("점수 : ", studentScore[i])
+        }
+        studentScore = {
+            koreanScore: 90,
+            englishScore: 80,
+            mathScore: 70,
+            scienceScore: 60,
+        }
+        console.log(studentScore.koreanScore)
+        console.log(studentScore['englishScore'])
+        let increment = 10
+        increment++
+        console.log(increment)
+        // increment = 10++
+        // console.log(increment) 오류 발생
+        console.log("" && "cat")
+        console.log(undefined && "cat")
+        console.log(0 && "cat")
+        console.log(null && "cat")
+        console.log("cat" && "dog")
+        console.log("cat" && "dog" && "bird")
+        console.log(false || true || false)
+        console.log(false || false)
+        console.log(false || "cat")
+        console.log("" || "cat")
+        console.log("dog" || "cat")
+        let score = 90
+        let grade = score >= 90 ? 'A+' : 'B'
+        console.log(grade)
+        let obj = { name: "철수", age: "20" }
+        for (let key in obj) {
+            if (key == "age")
+                break;
+            console.log(key + ": " + obj[key])
+        }
+        let sum=0
+        for(let i=1; i<=100; i++){
+            sum+=i
+        }
+        console.log(sum)
+
+
     </script>
 </body>
 

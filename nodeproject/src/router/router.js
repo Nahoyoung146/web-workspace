@@ -5,7 +5,7 @@ module.exports = (app) => {
     router.get("/", ctrl.views.project)
     router.get("/outline", ctrl.views.outline)
     router.get("/game", ctrl.views.game)
-    router.get("/chart", ctrl.views.chart)
+    router.post("/update", ctrl.process.update)
     
     return router
 }

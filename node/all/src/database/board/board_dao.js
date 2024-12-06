@@ -47,10 +47,11 @@ const daoInsert = {
         const sql = `insert into board(WRITE_NO, TITLE, CONTENT, ORIGIN_FILE_NAME, CHANGE_FILE_NAME, ID) values(board_seq.nextval, :title, :content, :originalname, :filename, :id)`
         let result = 0
         try {
-            result = (await con).execute(sql, body)
+            result = await (await con).execute(sql, body)
         } catch (err) {
             console.log(err)
         }
+        console.log("진짜 result", result)
     },
     del: async (body) => {
         console.log(body)

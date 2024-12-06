@@ -6,6 +6,7 @@ const sessionConfig = require("./config/cookie_session/cookie_session_config");
 //bodyParser 미들웨어는 router에서 app전달 전에 설정해야 된다.
 //그렇지 않으면 router에 연결된 곳에서 body를 사용할 수 없다
 app.use(bodyParser.urlencoded());
+app.use(bodyParser.json());
 app.use(session(sessionConfig.sessionConfig));
 const router = require("./src/routers/router")(app);
 app.use("/", router);

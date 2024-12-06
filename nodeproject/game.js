@@ -80,6 +80,8 @@ function Enemy() { //외계인을 만들기 위한 자료
 
         if (this.y >= canvas.height - 64) {
             gameOver = true
+            let msg = `<br><button onclick="result_form()">결과 확인</button>`
+            document.getElementById("main").insertAdjacentHTML("beforeend", msg)
             // console.log(gameOver)
         }
     }
@@ -188,10 +190,19 @@ function render() {
     }
 }
 
+const dotori = () => {
+    let num = 5000 * score
+    console.log("score : ", score)
+    console.log("num : ", num)
+    document.getElementById("a").innerHTML = num + "개"
+    document.getElementById("b").value = num
+}
+
 function main() {
-    if (!gameOver) { //gameOver가 false면 main함수 중지
+    if (!gameOver) { //gameOver가 true면 main함수 중지
         render()
         // console.log("animation calls main function")
+        dotori()
         requestAnimationFrame(main)
     }
     else
