@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body align="center">
+    <script>
+        function sum(num1, num2) {
+            if (typeof num1 !== "number" || typeof num2 !== "number") {
+                return
+            }
+            return num1 + num2
+        }
+        let result = sum("a", "b")
+        console.log("out : ", result)
+        function getArrayMaxNumber(arr) {
+            let max = 0
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] > max) {
+                    max = arr[i]
+                }
+            }
+            return max
+        }
+        const max = getArrayMaxNumber([10, 50, 30])
+        console.log("max : ", max)
+        console.log("num : ", num)
+        var num = 10
+        const email = "test!naver.com"
+        if (email.includes("@") === false) {
+            console.log("올바른 이메일 형식이 아닙니다.")
+        }
+        if (email.indexOf("@") === -1) {
+            console.log("올바른 이메일 형식이 아닙니다.")
+        }
+        const arr = [10, 20, 30, 40]
+        arr.push(50)
+        console.log(arr)
+        arr.pop()
+        console.log(arr)
+        arr.unshift(0)
+        console.log(arr)
+        arr.shift
+        console.log(arr)
+        let date = new Date()
+        console.log(date)
+        date = new Date(2022, 11, 25, 18, 30, 50)
+        const dateFormat = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+        console.log(dateFormat)
+        const date1 = new Date('2022-12-23')
+        const date2 = new Date('2022-12-25')
+        const dateDiff = date2.getTime() - date1.getTime()
+        const interval = dateDiff / (24 * 60 * 60 * 1000)
+        console.log(`두 날짜의 차이는 ${interval}일입니다.`)
+        function getMinMaxRandom(min, max) {
+            return Math.floor(Math.random() * (max - min) + 1 + min) //20을 제외하고 싶으면 +1 삭제
+        }
+        const maxRandom = getMinMaxRandom(10, 20)
+        console.log(maxRandom) // 10 이상 20 이하의 무작위 정수
+        let arr1 = [10, 120, 30, 50, 20]
+        arr1.sort(function (a, b) {
+            if (a < b)
+                return 1
+            else if (a > b)
+                return -1
+            else
+                return 0
+        })
+        console.log(`가장 큰 수는 ${arr1[0]}입니다.베`)
+    </script>
+</body>
+
+</html>

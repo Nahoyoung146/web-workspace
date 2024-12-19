@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const circle = (r) => {
+            let area = 3.14*r**2
+            return area
+        }
+        console.log("원의 넓이 : ", circle(5))
+        console.log("----------------------------------------")
+        const max =(arr) => {
+            let max=0;
+            for(let i=0; i<arr.length; i++){
+                if(arr[i]>max)
+                    max=arr[i]
+            }
+            return max
+        }
+        console.log("배열 중 가장 큰 수 : ", max([10,20,90,40,50,60]))
+        console.log("----------------------------------------")
+        const BMI = (height, weight) => {
+            let msg=""
+            let a = weight/((height/100)**2)
+            console.log("a : ", a)
+            if(a>=26)
+                msg = "비만"
+            else if(24<=a && a<=25)
+                msg = "과체중"
+            else if(18.5<=a && a<=23)
+                msg = "정상"
+            else
+                msg="저체중"
+            return msg
+        }
+        console.log("체질량 지수 계산 : ", BMI(170,50))
+    </script>
+</body>
+</html>
