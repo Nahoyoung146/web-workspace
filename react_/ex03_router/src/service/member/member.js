@@ -1,5 +1,3 @@
-import { data } from "react-router-dom"
-
 let data_set = [
     { id: "aaa", pwd: "aaa", name: "홍길동", addr: "산골짜기" },
     { id: "bbb", pwd: "bbb", name: "김개똥", addr: "개똥별" },

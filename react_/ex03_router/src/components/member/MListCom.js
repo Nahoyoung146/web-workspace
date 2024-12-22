@@ -7,7 +7,6 @@ const MListCom = ({ list, onClick }) => {
 
     return <>
         <div>
-            {console.log("list : ", list)}
             {list.map(data => (
                 <div key={data.id}>id : {data.id}, name : <span>{data.name}</span></div> //onClick={함수(data.id)}
             ))}
