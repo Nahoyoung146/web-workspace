@@ -11,11 +11,17 @@ const MListCon = () => {
     const [num, setNum] = useState(0)
     useEffect(() => {
         console.log("useEffect")
-        setNum(num + 1)
-        setList(getList())
+        const getData = async () => {
+            const data = await getList()
+            setList(data)
+        }
+        getData()
+        // getList()
+        // .then (data => setList(data))
+        // setList(await getList())
     }, [])
     const onClick = (id) => {
-        navigate("/member/delete/"+id)
+        navigate("/member/delete/" + id)
         alert("삭제 완료")
     }
     return <>{console.log("랜더링 종료")}

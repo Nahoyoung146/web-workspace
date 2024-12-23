@@ -8,7 +8,10 @@ const MListCom = ({ list, onClick }) => {
     return <>
         <div>
             {list.map(data => (
-                <div key={data.id}>id : {data.id}, name : <span>{data.name}</span></div> //onClick={함수(data.id)}
+                <>
+                    <div key={data.id}>id : {data.id}, name : <span>{data.name}</span></div> 
+                    {/* onClick={함수(data.id)} */}
+                </>
             ))}
             <button onClick={() => onClick("aaa")}>삭제</button>
             <hr />

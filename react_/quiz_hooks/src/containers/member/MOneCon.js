@@ -9,14 +9,17 @@ const MOneCon = () => {
     const params = useParams()
     const [list, setList] = useState([])
     useEffect(() => {
-        setList(getOne(params.name))
+        setList(getOne(params.id))
     }, [])
     const del = (id) => {
         navigate("/member/delete/" + id)
         alert("삭제되었습니다.")
     }
+    const update = (id) => {
+        navigate("/member/update/" + id)
+    }
     return <>
-        <MOneCom list={list} del={del} />
+        <MOneCom list={list} del={del} update={update} />
     </>
 }
 export default MOneCon

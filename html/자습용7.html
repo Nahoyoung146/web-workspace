@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 웹 브라우저에 스크롤을 생기게 하기 위해 body 태그에 너이, 높이 추가 */
+        body {
+            width: 2500px;
+            height: 5000px;
+        }
+
+        /* 스크롤 되어도 버튼이 따라다니게 하기 위해 fixed 속성값 추가 */
+        button {
+            position: fixed;
+            left: 10px;
+            top: 10px;
+        }
+
+        #button1{
+            position: fixed;
+            left: 140px;
+            top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="printInfo()">window 객체 속성</button>
+    <button id="button1" onclick="popup()">팝업</button>
+    <script>
+        function printInfo() {
+            console.log(`웹브라우저의 너비 : ${window.innerWidth}`)
+            console.log(`웹브라우저의 높이 : ${window.innerHeight}`)
+            console.log(`웹브라우저 창의 너비 : ${window.outerWidth}`)
+            console.log(`웹브라우저 창의 높이 : ${window.outerHeight}`)
+            console.log(`웹브라우저 창 위쪽 면과 모니터 사이의 간격 : ${window.screenTop}/${window.screenY}`)
+            console.log(`웹브라우저 창 안쪽 면과 모니터 사이의 간격 : ${window.screenLeft}/${window.screenX}`)
+            console.log(`웹브라우저 창의 스크롤 가로 위치 : ${window.scrollX}`)
+            console.log(`웹브라우저 창의 스크롤 세로 위치 : ${window.scrollY}`)
+        }
+        function popup(){
+            window.open("popup.html","팝업","width=200","height=100")
+        }
+    </script>
+    
+</body>
+
+</html>

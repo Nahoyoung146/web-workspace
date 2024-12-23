@@ -12,7 +12,7 @@ const MListCom = ({ list }) => {
                 {list.map(data => (
                     <tr>
                         <td>{data.id}</td>
-                        <td><Link to={"/member/one/" + data.name}>{data.name}</Link></td>
+                        <td><Link to={"/member/one/" + data.id}>{data.name}</Link></td>
                     </tr>
                 ))}
             </tbody>
