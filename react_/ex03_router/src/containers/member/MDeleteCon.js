@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom"
 import { deleteList } from "../../service/member/member"
-import { use, useEffect } from "react"
+import { useEffect } from "react"
 const MDeleteCon = async () => {
     const params = useParams()
     useEffect( ()=>{

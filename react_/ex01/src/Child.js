@@ -11,3 +11,4 @@ function Child(props) {
     </>
 }
 export default Child
+[name] = [1,2,3,4]

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="popup()">팝업</button>
+    <script>
+        function popup() {
+            const left = (screen.availWidth - 500) / 2 + Window.screenX
+            const top = (screen.availHeight - 300) / 2
+            window.open("https://www.google.co.kr", "구글", "width=500px", "height=300px, left=" + left + ", top=" + top)
+            console.log(window.screenX)
+        }
+    </script>
+</body>
+
+</html>
