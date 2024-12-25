@@ -1,11 +1,85 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .red-color {
+            color: red
+        }
+
+        .fz20 {
+            font-size: 20px;
+        }
+
+        .total {
+            color: red;
+            font-size: 20px;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <!-- <h1 id="title">title</h1>
+    <p class="text">text-1</p>
+    <p class="text">text-2</p>
+    <script>
+        const el = document.getElementById("title")
+        console.log(el)
+        const classE1 = document.getElementsByClassName("text")
+        console.log(classE1)
+        const tagEls = document.getElementsByTagName("p")
+        console.log(tagEls)
+    </script> -->
+    <!-- <div class="box-1">
+        <p class="text">text-1</p>
+        <p class="text">text-2</p>
+    </div>
+    <div class="box-2">
+        <p class="text">text-3</p>
+        <p class="text">text-4</p>
+    </div>
+    <script>
+        const el =document.querySelector(".box-1")
+        console.log(el)
+        const el =document.getElementsByClassName("box-1")[0].children
+        console.log(el)
+        const el =document.querySelectorAll(".box-1 .text")
+        console.log(el)
+    </script> -->
+    <!-- <p id="title">Hello, <span style="display: none;">Javascript!</span></p>
+    <script>
+        let data1 = document.getElementById("title").textContent
+        let data2 = document.getElementById("title").innerText
+        let data3 = document.getElementById("title").innerHTML
+        console.log(`data1 : ${data1}\ndata2 : ${data2}\ndata3 : ${data3}`)
+    </script>
+    <p id="textContent"></p>
+    <p id="innerText"></p>
+    <p id="innerHTML"></p>
+    <script>
+        document.querySelector("#textContent").textContent = `<strong>textContent</Strong> 속성`
+        document.querySelector("#innerText").innerText = `<strong>innerText</Strong> 속성`
+        document.querySelector("#innerHTML").innerHTML = `<strong>innerHTML</Strong> 속성`
+    </script> -->
+    <p id="text">text</p>
+    <script>
+        const pE1 = document.querySelector("#text")
+        // 책에서는 classList 사용
+        pE1.classList.add("red-color")
+        pE1.classList.add("fz20")
+        // pE1.classList.add("red-color", "fz20") 이렇게 한꺼번에 속성 추가 가능
+        // pE1.className="total" 수업에서는 className사용
+        pE1.classList.remove("red-color", "fz20")
+        setInterval(function () {
+            pE1.classList.toggle("red-color")
+            pE1.classList.toggle("fz20")
+            // toggle은 add처럼 한꺼번에 처리 못함 굳이 하고 싶다고 하면
+            // ["red-color", "fz20"].forEach(cls => pE1.classList.toggle(cls))
+        }, 1000)
+    </script>
 </body>
+
 </html>

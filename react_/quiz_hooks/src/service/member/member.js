@@ -19,8 +19,24 @@ const insert = (body) => {
 }
 
 const update = (body) => {
-    data_set.filter(data => data.id === body.id)[0].name = body.name
-    data_set.filter(data => data.id === body.id)[0].addr = body.addr
+    let name = data_set.filter(data => data.id === body.id)[0]
+    name.name = body.name
+    name.addr = body.addr
 }
 
-export { getList, getOne, del, insert, update }
+const loginCheck = (id, pwd) => {
+    const data = data_set.filter(data => data.id === id)
+    if (data.length !== 0) {
+        if (data[0].pwd === pwd) {
+            return 0
+        }
+        else {
+            return 1
+        }
+    }
+    else {
+        return -1
+    }
+}
+
+export { getList, getOne, del, insert, update, loginCheck }
