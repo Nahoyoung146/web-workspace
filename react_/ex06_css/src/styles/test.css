@@ -1,0 +1,9 @@
+.test {
+    background-color: aqua;
+    color: red;
+}
+.aaaa {
+   font-size: 20px; text-align: center;
+   width: 50%; margin: auto;
+   padding: 10px 0; border-bottom: 1px solid gray;
+}
